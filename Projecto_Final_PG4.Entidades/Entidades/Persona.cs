@@ -8,15 +8,8 @@ using System.Threading.Tasks;
 namespace Projecto_Final_PG4.Entidades
 {
     public class Persona
-    {
-        #region variables
-        //publicas
-
-        //privadas
-        
+    {        
         public int ID_persona { get; set; } 
-
-         //Cambio del codigo
 
         [Key]
         public string cedula { get; set; }
@@ -51,22 +44,5 @@ namespace Projecto_Final_PG4.Entidades
 
         //public ICollection<Persona> Direcciones { get; set; }
 
-        #endregion
-
-        #region Propiedades
-
-
-        #endregion
-
-        #region Constructores
-
-
-        #endregion
-
-        #region Metodos
-        //publicos
-
-        //privados
-        #endregion
     }
 }
