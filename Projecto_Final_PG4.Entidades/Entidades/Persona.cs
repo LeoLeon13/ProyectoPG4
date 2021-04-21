@@ -16,7 +16,7 @@ namespace Projecto_Final_PG4.Entidades
         
         public int ID_persona { get; set; } 
 
-        public int variablenueva { get; set; } 
+         
 
         [Key]
         public string cedula { get; set; }
