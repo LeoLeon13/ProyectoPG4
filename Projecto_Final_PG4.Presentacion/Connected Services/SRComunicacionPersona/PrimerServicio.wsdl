@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PrimerServicio" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:64676/Implementacion/PrimerServicio.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:64676/Implementacion/PrimerServicio.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:64676/Implementacion/PrimerServicio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Projecto_Final_PG4.ComunicacionSApp" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPrimerServicio_InsertarPersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarPersona" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_InsertarPersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ModificarPersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarPersona" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ModificarPersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_EliminarPersona_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarPersona" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_EliminarPersona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarPersonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ObtenerPersonaID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPersonaID" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ObtenerPersonaID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerPersonaIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_InsertarAutoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAutoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_InsertarAutoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAutoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ModificarAutoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarAutoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ModificarAutoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarAutoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_EliminarAutoCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAutoCliente" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_EliminarAutoCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAutoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ObtenerAutoClienteID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAutoClienteID" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ObtenerAutoClienteID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAutoClienteIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ObtenerTodosClientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosClientes" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ObtenerTodosClientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_InsertarServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarServicio" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_InsertarServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ModificarServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarServicio" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ModificarServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_EliminarServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarServicio" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_EliminarServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ObtenerServicioID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerServicioID" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ObtenerServicioID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerServicioIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ObtenerTodosServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosServicio" />
+  </wsdl:message>
+  <wsdl:message name="IPrimerServicio_ObtenerTodosServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosServicioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPrimerServicio">
+    <wsdl:operation name="InsertarPersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/InsertarPersona" message="tns:IPrimerServicio_InsertarPersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/InsertarPersonaResponse" message="tns:IPrimerServicio_InsertarPersona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarPersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/ModificarPersona" message="tns:IPrimerServicio_ModificarPersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/ModificarPersonaResponse" message="tns:IPrimerServicio_ModificarPersona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPersona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/EliminarPersona" message="tns:IPrimerServicio_EliminarPersona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/EliminarPersonaResponse" message="tns:IPrimerServicio_EliminarPersona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPersonaID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/ObtenerPersonaID" message="tns:IPrimerServicio_ObtenerPersonaID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/ObtenerPersonaIDResponse" message="tns:IPrimerServicio_ObtenerPersonaID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/ObtenerTodos" message="tns:IPrimerServicio_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/ObtenerTodosResponse" message="tns:IPrimerServicio_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAutoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/InsertarAutoCliente" message="tns:IPrimerServicio_InsertarAutoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/InsertarAutoClienteResponse" message="tns:IPrimerServicio_InsertarAutoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarAutoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/ModificarAutoCliente" message="tns:IPrimerServicio_ModificarAutoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/ModificarAutoClienteResponse" message="tns:IPrimerServicio_ModificarAutoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAutoCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/EliminarAutoCliente" message="tns:IPrimerServicio_EliminarAutoCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/EliminarAutoClienteResponse" message="tns:IPrimerServicio_EliminarAutoCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAutoClienteID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/ObtenerAutoClienteID" message="tns:IPrimerServicio_ObtenerAutoClienteID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/ObtenerAutoClienteIDResponse" message="tns:IPrimerServicio_ObtenerAutoClienteID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosClientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/ObtenerTodosClientes" message="tns:IPrimerServicio_ObtenerTodosClientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/ObtenerTodosClientesResponse" message="tns:IPrimerServicio_ObtenerTodosClientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/InsertarServicio" message="tns:IPrimerServicio_InsertarServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/InsertarServicioResponse" message="tns:IPrimerServicio_InsertarServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/ModificarServicio" message="tns:IPrimerServicio_ModificarServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/ModificarServicioResponse" message="tns:IPrimerServicio_ModificarServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/EliminarServicio" message="tns:IPrimerServicio_EliminarServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/EliminarServicioResponse" message="tns:IPrimerServicio_EliminarServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerServicioID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/ObtenerServicioID" message="tns:IPrimerServicio_ObtenerServicioID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/ObtenerServicioIDResponse" message="tns:IPrimerServicio_ObtenerServicioID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrimerServicio/ObtenerTodosServicio" message="tns:IPrimerServicio_ObtenerTodosServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrimerServicio/ObtenerTodosServicioResponse" message="tns:IPrimerServicio_ObtenerTodosServicio_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPrimerServicio" type="tns:IPrimerServicio">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertarPersona">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/InsertarPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarPersona">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/ModificarPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarPersona">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/EliminarPersona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerPersonaID">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/ObtenerPersonaID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAutoCliente">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/InsertarAutoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarAutoCliente">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/ModificarAutoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAutoCliente">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/EliminarAutoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAutoClienteID">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/ObtenerAutoClienteID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosClientes">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/ObtenerTodosClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarServicio">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/InsertarServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarServicio">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/ModificarServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarServicio">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/EliminarServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerServicioID">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/ObtenerServicioID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTodosServicio">
+      <soap:operation soapAction="http://tempuri.org/IPrimerServicio/ObtenerTodosServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PrimerServicio">
+    <wsdl:port name="BasicHttpBinding_IPrimerServicio" binding="tns:BasicHttpBinding_IPrimerServicio">
+      <soap:address location="http://localhost:64676/Implementacion/PrimerServicio.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

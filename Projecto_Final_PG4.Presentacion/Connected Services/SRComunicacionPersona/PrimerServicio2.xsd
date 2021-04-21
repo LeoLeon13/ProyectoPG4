@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Projecto_Final_PG4.ComunicacionSApp" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Projecto_Final_PG4.ComunicacionSApp" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PersonaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Apellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cedula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Celular" type="xs:int" />
+      <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EsEmpleado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_persona" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" type="xs:int" />
+      <xs:element minOccurs="0" name="Tipo_empleado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonaDTO" nillable="true" type="tns:PersonaDTO" />
+  <xs:complexType name="PersonaDTO.ListaPersonas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lista" nillable="true" type="tns:ArrayOfPersonaDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonaDTO.ListaPersonas" nillable="true" type="tns:PersonaDTO.ListaPersonas" />
+  <xs:complexType name="ArrayOfPersonaDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonaDTO" nillable="true" type="tns:PersonaDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonaDTO" nillable="true" type="tns:ArrayOfPersonaDTO" />
+  <xs:complexType name="AutoClienteDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cedula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_Auto_Cliente1" type="xs:int" />
+      <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AutoClienteDTO" nillable="true" type="tns:AutoClienteDTO" />
+  <xs:complexType name="AutoClienteDTO.ListaAutoCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lista" nillable="true" type="tns:ArrayOfAutoClienteDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AutoClienteDTO.ListaAutoCliente" nillable="true" type="tns:AutoClienteDTO.ListaAutoCliente" />
+  <xs:complexType name="ArrayOfAutoClienteDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AutoClienteDTO" nillable="true" type="tns:AutoClienteDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAutoClienteDTO" nillable="true" type="tns:ArrayOfAutoClienteDTO" />
+  <xs:complexType name="ServiciosDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cedula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion_servicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID_servicio1" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_tipo_servicio1" type="xs:int" />
+      <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Servicio_seleccionado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiciosDTO" nillable="true" type="tns:ServiciosDTO" />
+  <xs:complexType name="ServiciosDTO.ListaServicios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lista" nillable="true" type="tns:ArrayOfServiciosDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiciosDTO.ListaServicios" nillable="true" type="tns:ServiciosDTO.ListaServicios" />
+  <xs:complexType name="ArrayOfServiciosDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiciosDTO" nillable="true" type="tns:ServiciosDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiciosDTO" nillable="true" type="tns:ArrayOfServiciosDTO" />
+</xs:schema>

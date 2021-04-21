@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Projecto_Final_PG4.ComunicacionSApp.PrimerServicio" CodeBehind="PrimerServicio.svc.cs" %>
