@@ -10,13 +10,13 @@ namespace Projecto_Final_PG4.ComunicacionSApp
     public class AutoClienteDTO
     {
         //Atributos
-        private int ID_Auto_Cliente;
+        private int Id_Auto_Cliente;
         private string cedula;
         private string placa;
 
         //Propiedades
         [DataMember]
-        public int ID_Auto_Cliente1 { get => ID_Auto_Cliente; set => ID_Auto_Cliente = value; }
+        public int ID_Auto_Cliente { get => Id_Auto_Cliente; set => Id_Auto_Cliente = value; }
         [DataMember]
         public string Cedula { get => cedula; set => cedula = value; }
         [DataMember]

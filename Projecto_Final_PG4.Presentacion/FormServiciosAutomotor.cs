@@ -26,8 +26,26 @@ namespace Projecto_Final_PG4.Presentacion
             dgvAutosClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
-        private void cargarDatos() 
+        private void cargarDatos()
         {
+            SRComunicacionPersona.PrimerServicioClient servicio = new SRComunicacionPersona.PrimerServicioClient();
+            //var lstAuto = servicio.ObtenerTodosAutomotores().lista;
+
+            if (Form_Login.tipoUsuario.ToString().Equals("S"))
+            {
+                dgvAutosClientes.DataSource = servicio.ObtenerTodosAutomotores().lista;
+                ocultarColumnas();
+            }
+            else
+            {
+                BindingSource source = new BindingSource();
+                source.DataSource = servicio.ObtenerAutomotorID(int.Parse(Form_Login.Idcliente.ToString()));
+                dgvAutosClientes.DataSource = source;
+
+                //dgvAutosClientes.DataSource = servicio.ObtenerAutomotorID(int.Parse(Form_Login.Idcliente.ToString()));//Autos.BuscarPorPlaca(Form_Login.placa.ToString());
+                ocultarColumnas();
+            }
+
             //Logica.LogicaAutomotores_ Autos = new Logica.LogicaAutomotores_();
             //dgvAutosClientes.DataSource = null;
             //if (Form_Login.tipoUsuario.ToString().Equals("S"))
@@ -35,32 +53,41 @@ namespace Projecto_Final_PG4.Presentacion
             //    dgvAutosClientes.DataSource = Autos.BuscarTodos();
             //    ocultarColumnas();
             //}
-            //else 
+            //else
             //{
             //    dgvAutosClientes.DataSource = Autos.BuscarPorPlaca(Form_Login.placa.ToString());
             //    ocultarColumnas();
-            //}            
+            //}
         }
 
-        private void ocultarColumnas() 
+        private void ocultarColumnas()
         {
-            //this.dgvAutosClientes.Columns["EsTransPublico"].Visible = false;
-            //this.dgvAutosClientes.Columns["EsManual"].Visible = false;
-            //this.dgvAutosClientes.Columns["EsTransEspe"].Visible = false;
-            //this.dgvAutosClientes.Columns["Tiene_contenedor"].Visible = false;
-            //this.dgvAutosClientes.Columns["EsMensajero"].Visible = false;
-            //this.dgvAutosClientes.Columns["EsClasica"].Visible = false;
+            this.dgvAutosClientes.Columns["Cilindraje"].Visible = false;
+            //this.dgvAutosClientes.Columns["ID_automotor"].Visible = false;
+            this.dgvAutosClientes.Columns["EsTransPublico"].Visible = false;
+            this.dgvAutosClientes.Columns["EsManual"].Visible = false;
+            this.dgvAutosClientes.Columns["EsTransEspe"].Visible = false;
+            this.dgvAutosClientes.Columns["Tiene_contenedor"].Visible = false;
+            this.dgvAutosClientes.Columns["EsMensajero"].Visible = false;
+            this.dgvAutosClientes.Columns["EsClasica"].Visible = false;
         }
 
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
-            //Logica.LogicaAutomotores_ Autos = new Logica.LogicaAutomotores_();
-            //dgvAutosClientes.DataSource = Autos.BuscarPorPlaca(tbxBuscar.Text);
+            SRComunicacionPersona.PrimerServicioClient servicio = new SRComunicacionPersona.PrimerServicioClient();
+            BindingSource source = new BindingSource();
+            source.DataSource = servicio.ObtenerAutomotorID(int.Parse(tbxBuscar.Text));
+            dgvAutosClientes.DataSource = source;
+            dgvAutosClientes.AutoResizeColumns();
+
+            //dgvAutosClientes.DataSource = servicio.ObtenerAutomotorID(int.Parse(tbxBuscar.Text));
+            //dgvAutosClientes.AutoResizeColumns();
         }
 
         private void btn_buscarTodos_Click(object sender, EventArgs e)
         {
             cargarDatos();
+            tbxBuscar.Clear();
         }
     }
 }

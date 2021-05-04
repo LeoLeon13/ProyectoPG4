@@ -18,7 +18,7 @@ namespace Projecto_Final_PG4.Logica
 
         }
 
-        public Servicios ObtenerId(int id)
+        public Servicios ObtenerId(int id)//cambie la variable de int a string
         {
             return uow.Servicios.ObtenerId(id);
         }

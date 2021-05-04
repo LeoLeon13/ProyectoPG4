@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projecto_Final_PG4.Presentacion.SRComunicacionPersona;
 //using Projecto_Final_PG4.Entidades;
 //using Projecto_Final_PG4.Logica;
 
@@ -25,14 +26,12 @@ namespace Projecto_Final_PG4.Presentacion
 
         private void CargarTipoTipoServicio()
         {
-            /*//se inicializa la capa y logica que voy a utilizar
-            Logica.LogicaTipoServicio TipoServicio = new Logica.LogicaTipoServicio();
-            //Inicializo la lista para almacenar la consulta para llenar el listado de clintes
-            List<Entidades.TipoServicio> lstTipoServicio = new List<Entidades.TipoServicio>();
-            //lleno el dataset con el metodo de consulta de la capa logica
-            lstTipoServicio = TipoServicio.BuscarTodos();
-            //agregao el resultado de la consulta al combo
-            dgvTipoServicios.DataSource = lstTipoServicio;*/
+            //Logica.LogicaTipoServicio TipoServicio = new Logica.LogicaTipoServicio();
+            //List<Entidades.TipoServicio> lstTipoServicio = new List<Entidades.TipoServicio>();
+            SRComunicacionPersona.PrimerServicioClient servicio = new SRComunicacionPersona.PrimerServicioClient();
+            var lstTipoServicio = servicio.ObtenerTodosTipoServicio().lista;
+            dgvTipoServicios.DataSource = lstTipoServicio;
+            dgvTipoServicios.AutoResizeColumns();
         }
 
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
@@ -47,75 +46,78 @@ namespace Projecto_Final_PG4.Presentacion
 
         private void dgvTipoServicios_MouseClick(object sender, MouseEventArgs e)
         {
-           /* txtId.Text = dgvTipoServicios.SelectedRows[0].Cells[0].Value.ToString();
-            txtDescripcion.Text = dgvTipoServicios.SelectedRows[0].Cells[1].Value.ToString();*/
+            txtId.Text = dgvTipoServicios.SelectedRows[0].Cells[1].Value.ToString();
+            txtDescripcion.Text = dgvTipoServicios.SelectedRows[0].Cells[0].Value.ToString();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            /*if (txtId.Text == string.Empty || txtDescripcion.Text == string.Empty)
+            if (txtId.Text == string.Empty || txtDescripcion.Text == string.Empty)
             {
                 MessageBox.Show("Todos los campos de texto deben de estar correctamente llenos",
                     "Favor revisar los campos solicitados",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            SRComunicacionPersona.PrimerServicioClient servicio = new SRComunicacionPersona.PrimerServicioClient();
 
-            //se inicializa la capa y logica que voy a utilizar
-            LogicaTipoServicio tipoServicio = new LogicaTipoServicio();
-            //Inicializo la lista para almacenar la consulta para llenar el listado de tiposervicios
-            TipoServicio obTipoServicio = new TipoServicio();
-            obTipoServicio.Descripcion_servicio = txtDescripcion.Text;
-            tipoServicio.Modificar(obTipoServicio);
+            TipoServicioDTO tipoServicio = new TipoServicioDTO();
+            tipoServicio.Descripcion_servicio = txtDescripcion.Text;
+            tipoServicio.ID_tipo_servicio = int.Parse(txtId.Text);
+            servicio.ModificarTipoServicio(tipoServicio);
 
             CargarTipoTipoServicio();
-            txtDescripcion.Clear();*/
+            txtDescripcion.Clear();
+            txtId.Clear();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            ////se inicializa la capa y logica que voy a utilizar
-            //LogicaTipoServicio tipoServicio = new LogicaTipoServicio();
-            ////Inicializo la lista para almacenar la consulta para llenar el listado de tiposervicios
-            //TipoServicio obTipoServicio = new TipoServicio();
-            //obTipoServicio.ID_Tipo_servicio = Convert.ToInt32(txtId.Text);
-            //obTipoServicio.Descripcion_servicio = txtDescripcion.Text;
-            //tipoServicio.Eliminar(obTipoServicio);
+            SRComunicacionPersona.PrimerServicioClient servicio = new SRComunicacionPersona.PrimerServicioClient();
 
-            //CargarTipoTipoServicio();
+            TipoServicioDTO tipoServicio = new TipoServicioDTO();
+
+            tipoServicio.ID_tipo_servicio = int.Parse(txtId.Text);
+            servicio.EliminarTipoServicio(tipoServicio.ID_tipo_servicio);
+
+            CargarTipoTipoServicio();
+            txtId.Clear();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //if (txtId.Text == string.Empty || txtDescripcion.Text == string.Empty)
-            //{
-            //    MessageBox.Show("Todos los campos de texto deben de estar correctamente llenos",
-            //        "Favor revisar los campos solicitados",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (txtDescripcion.Text == string.Empty)//if (txtId.Text == string.Empty || txtDescripcion.Text == string.Empty)
+            {
+                MessageBox.Show("Todos los campos de texto deben de estar correctamente llenos",
+                    "Favor revisar los campos solicitados",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            SRComunicacionPersona.PrimerServicioClient servicio = new SRComunicacionPersona.PrimerServicioClient();
 
-            ////se inicializa la capa y logica que voy a utilizar
-            //LogicaTipoServicio tipoServicio = new LogicaTipoServicio();
-            ////Inicializo la lista para almacenar la consulta para llenar el listado de tiposervicios
-            //TipoServicio obTipoServicio = new TipoServicio();
-            //obTipoServicio.Descripcion_servicio = txtDescripcion.Text;
-            //tipoServicio.Insertar(obTipoServicio);
+            TipoServicioDTO tipoServicio = new TipoServicioDTO();
 
-            //CargarTipoTipoServicio();
-            //txtDescripcion.Clear();
+            tipoServicio.Descripcion_servicio = txtDescripcion.Text;
+            servicio.InsertarTipoServicio(tipoServicio);
+
+            CargarTipoTipoServicio();
+            txtDescripcion.Clear();
+            txtId.Clear();
+            btnAgregar.Enabled = true;
         }
 
         private void dgvTipoServicios_MouseClick_1(object sender, MouseEventArgs e)
         {
-            //txtId.Text = dgvTipoServicios.SelectedRows[0].Cells[0].Value.ToString();
-            //txtDescripcion.Text = dgvTipoServicios.SelectedRows[0].Cells[1].Value.ToString();
+            txtId.Text = dgvTipoServicios.SelectedRows[0].Cells[1].Value.ToString();
+            txtDescripcion.Text = dgvTipoServicios.SelectedRows[0].Cells[0].Value.ToString();
+            btnAgregar.Enabled = false;
         }
 
         private void btn_Limpira_Click(object sender, EventArgs e)
         {
-            //txtId.Clear();
-            //txtDescripcion.Clear();
+            txtId.Clear();
+            txtDescripcion.Clear();
+            btnAgregar.Enabled = true;
         }
     }
 }

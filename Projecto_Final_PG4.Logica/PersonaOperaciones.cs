@@ -36,7 +36,7 @@ namespace Projecto_Final_PG4.Logica
             }
         }
 
-        public void Eliminar(int id)
+        public void Eliminar(string id)
         {
             Persona personaE = uow.Persona.ObtenerId(id);
             if (personaE != null)

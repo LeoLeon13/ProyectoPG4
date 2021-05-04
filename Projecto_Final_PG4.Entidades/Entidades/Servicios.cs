@@ -10,10 +10,7 @@ namespace Projecto_Final_PG4.Entidades
 {
     public class Servicios
     {
-        #region variables
-        //publicas
-
-        //privadas
+        
         [Key]
         public int ID_servicio { get; set; }
 
@@ -26,7 +23,6 @@ namespace Projecto_Final_PG4.Entidades
         [MaxLength(120)]
         public string descripcion_servicio { get; set; }
 
-
         //public int ID_cliente { get; set; }
         [MaxLength(40)]
         public string cedula { get; set; }
@@ -37,6 +33,5 @@ namespace Projecto_Final_PG4.Entidades
         [MaxLength(50)]
         public string servicio_seleccionado { get; set; }
 
-        #endregion
     }
 }

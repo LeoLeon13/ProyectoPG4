@@ -10,23 +10,23 @@ namespace Projecto_Final_PG4.ComunicacionSApp
     public class AutomotoresDTO
     {
         //Atributos
-        private int ID_automotor;
+        private int Id_automotor;
         private string placa;
         private string marca;
         private string modelo;
         private string tipo_combustible;
         private int cilindraje;
-        private char esTransprivateo;
-        private char esManual;
-        private char esTransEspe;        
-        private char tiene_contenedor;        
-        private char esMensajero;        
-        private char esClasica;
+        private string esTransPublico;
+        private string esManual;
+        private string esTransEspe;
+        private string tiene_contenedor;
+        private string esMensajero;
+        private string esClasica;
         private string tipo_vehiculo;
 
         //Propiedades
         [DataMember]
-        public int ID_automotor1 { get => ID_automotor; set => ID_automotor = value; }
+        public int ID_automotor { get => Id_automotor; set => Id_automotor = value; }
         [DataMember]
         public string Placa { get => placa; set => placa = value; }
         [DataMember]
@@ -38,18 +38,26 @@ namespace Projecto_Final_PG4.ComunicacionSApp
         [DataMember]
         public int Cilindraje { get => cilindraje; set => cilindraje = value; }
         [DataMember]
-        public char EsTransprivateo { get => esTransprivateo; set => esTransprivateo = value; }
+        public string EsTransPublico { get => esTransPublico; set => esTransPublico = value; }
         [DataMember]
-        public char EsManual { get => esManual; set => esManual = value; }
+        public string EsManual { get => esManual; set => esManual = value; }
         [DataMember]
-        public char EsTransEspe { get => esTransEspe; set => esTransEspe = value; }
+        public string EsTransEspe { get => esTransEspe; set => esTransEspe = value; }
         [DataMember]
-        public char Tiene_contenedor { get => tiene_contenedor; set => tiene_contenedor = value; }
+        public string Tiene_contenedor { get => tiene_contenedor; set => tiene_contenedor = value; }
         [DataMember]
-        public char EsMensajero { get => esMensajero; set => esMensajero = value; }
+        public string EsMensajero { get => esMensajero; set => esMensajero = value; }
         [DataMember]
-        public char EsClasica { get => esClasica; set => esClasica = value; }
+        public string EsClasica { get => esClasica; set => esClasica = value; }
         [DataMember]
         public string Tipo_vehiculo { get => tipo_vehiculo; set => tipo_vehiculo = value; }
+
+        [DataContract]
+        public class ListaAutomotores
+        {
+            [DataMember]
+            public List<AutomotoresDTO> lista;
+
+        }
     }
 }

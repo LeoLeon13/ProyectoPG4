@@ -32,7 +32,7 @@
   <xs:complexType name="AutoClienteDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="Cedula" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID_Auto_Cliente1" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_Auto_Cliente" type="xs:int" />
       <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -54,8 +54,8 @@
       <xs:element minOccurs="0" name="Cedula" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Descripcion_servicio" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="ID_servicio1" type="xs:int" />
-      <xs:element minOccurs="0" name="ID_tipo_servicio1" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_servicio" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_tipo_servicio" type="xs:int" />
       <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Servicio_seleccionado" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -73,4 +73,74 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfServiciosDTO" nillable="true" type="tns:ArrayOfServiciosDTO" />
+  <xs:complexType name="ServiciosClienteDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cedula" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_Servicio_Cliente" type="xs:int" />
+      <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Servicio_Seleccionado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiciosClienteDTO" nillable="true" type="tns:ServiciosClienteDTO" />
+  <xs:complexType name="ServiciosClienteDTO.ListaServiciosCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lista" nillable="true" type="tns:ArrayOfServiciosClienteDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiciosClienteDTO.ListaServiciosCliente" nillable="true" type="tns:ServiciosClienteDTO.ListaServiciosCliente" />
+  <xs:complexType name="ArrayOfServiciosClienteDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiciosClienteDTO" nillable="true" type="tns:ServiciosClienteDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiciosClienteDTO" nillable="true" type="tns:ArrayOfServiciosClienteDTO" />
+  <xs:complexType name="AutomotoresDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cilindraje" type="xs:int" />
+      <xs:element minOccurs="0" name="EsClasica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EsManual" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EsMensajero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EsTransEspe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EsTransPublico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_automotor" type="xs:int" />
+      <xs:element minOccurs="0" name="Marca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Modelo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tiene_contenedor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo_combustible" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo_vehiculo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AutomotoresDTO" nillable="true" type="tns:AutomotoresDTO" />
+  <xs:complexType name="AutomotoresDTO.ListaAutomotores">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lista" nillable="true" type="tns:ArrayOfAutomotoresDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AutomotoresDTO.ListaAutomotores" nillable="true" type="tns:AutomotoresDTO.ListaAutomotores" />
+  <xs:complexType name="ArrayOfAutomotoresDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AutomotoresDTO" nillable="true" type="tns:AutomotoresDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAutomotoresDTO" nillable="true" type="tns:ArrayOfAutomotoresDTO" />
+  <xs:complexType name="TipoServicioDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion_servicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_tipo_servicio" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoServicioDTO" nillable="true" type="tns:TipoServicioDTO" />
+  <xs:complexType name="TipoServicioDTO.ListaTipoServicios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lista" nillable="true" type="tns:ArrayOfTipoServicioDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoServicioDTO.ListaTipoServicios" nillable="true" type="tns:TipoServicioDTO.ListaTipoServicios" />
+  <xs:complexType name="ArrayOfTipoServicioDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TipoServicioDTO" nillable="true" type="tns:TipoServicioDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTipoServicioDTO" nillable="true" type="tns:ArrayOfTipoServicioDTO" />
 </xs:schema>

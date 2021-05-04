@@ -40,9 +40,9 @@ namespace Projecto_Final_PG4.Presentacion
 
         private void CargarGridPersonas()
         {
-            SRComunicacionPersona.PrimerServicioClient cargarDatosUsr = new PrimerServicioClient();  
+            SRComunicacionPersona.PrimerServicioClient cargarDatosUsr = new PrimerServicioClient();
             dgv_Personas.DataSource = null;
-            dgv_Personas.DataSource = cargarDatosUsr.ObtenerTodos().lista;
+            //dgv_Personas.DataSource = cargarDatosUsr.ObtenerTodosPersona().lista;
             dgv_Personas.AutoResizeColumns();
             this.dgv_Personas.Columns["ID_Persona"].Visible = false;
             this.dgv_Personas.Columns["Pass"].Visible = false;
@@ -254,7 +254,7 @@ namespace Projecto_Final_PG4.Presentacion
                 if (cargarUsr != null)
                 {
                     BindingSource source = new BindingSource();
-                    source.DataSource = cargarUsr.ObtenerPersonaID(int.Parse(txt_BuscarUsr.Text));
+                    source.DataSource = cargarUsr.ObtenerPersonaID(txt_BuscarUsr.Text);
                     dgv_Personas.DataSource = source;
                     dgv_Personas.AutoResizeColumns();
                 }
@@ -277,6 +277,18 @@ namespace Projecto_Final_PG4.Presentacion
         {
             try
             {
+                PersonaDTO personaEliminar = new PersonaDTO();
+                personaEliminar.Cedula = txt_Cedula.Text;
+                personaEliminar.Nombre = txt_Nombre.Text;
+                personaEliminar.Apellido = txt_Apellidos.Text;
+                personaEliminar.Correo = txt_Correo.Text;
+                personaEliminar.Celular = int.Parse(txtCel.Text);
+                personaEliminar.EsEmpleado = cbx_EsEmpleado.Text;
+                personaEliminar.Telefono = int.Parse(txt_Telefon.Text);
+                personaEliminar.Direccion = txt_Direccion_Cliente.Text;
+                personaEliminar.Tipo_empleado = txt_Tipo_Empleado.Text;
+                personaEliminar.Departamento = txt_Departamento.Text;
+                personaEliminar.Pass = txt_Password.Text;
                 //Persona personaEliminar = new Persona(
                 //        txt_Cedula.Text,
                 //        txt_Nombre.Text,
@@ -290,10 +302,12 @@ namespace Projecto_Final_PG4.Presentacion
                 //        txt_Departamento.Text,
                 //        txt_Password.Text
                 //       );
-
+                SRComunicacionPersona.PrimerServicioClient servicio = new PrimerServicioClient();
+                servicio.EliminarPersona(personaEliminar.Cedula);
                 //logicaPersonas.Eliminar(int.Parse(personaEliminar.Cedula));
                 LimpiarDatos();
                 CargarGridPersonas();
+                btn_Agregar_Usuario.Enabled = true;
             }
             catch (Exception ex)
             {

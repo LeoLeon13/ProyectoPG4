@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projecto_Final_PG4.Presentacion.SRComunicacionPersona;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,13 +47,16 @@ namespace Projecto_Final_PG4.Presentacion
 
         private void cargar_clientes()
         {
-            /*List<Persona> datos = LogiPer.BuscarTodos();
-            foreach (var item in datos)
+            SRComunicacionPersona.PrimerServicioClient cargarDatosPersona = new PrimerServicioClient();
+            var listaPersona = cargarDatosPersona.ObtenerTodosPersona().lista;
+
+            //List<Persona> datos = LogiPer.BuscarTodos();
+            foreach (var item in listaPersona)
             {
                 cbx_Clientes.Items.Add(item.Cedula.Trim().ToString());
             }
 
-            cbx_Clientes.SelectedIndex = 0;*/
+            cbx_Clientes.SelectedIndex = 0;
         }
 
         private void Validar_Agregar()
@@ -82,6 +86,20 @@ namespace Projecto_Final_PG4.Presentacion
                 }
                 else
                 {
+                    AutomotoresDTO automotornuevo = new AutomotoresDTO();
+                    automotornuevo.Placa = txt_Placa.Text;
+                    automotornuevo.Marca = txt_Marca.Text;
+                    automotornuevo.Modelo = txt_Modelo.Text;
+                    automotornuevo.Tipo_combustible = txt_Combustible.Text;
+                    automotornuevo.Cilindraje = int.Parse(txt_Cilindraje.Text);
+                    automotornuevo.EsTransPublico = nulo1;
+                    automotornuevo.EsManual = Manual;
+                    automotornuevo.EsTransEspe = nulo3;
+                    automotornuevo.Tiene_contenedor = nulo4;
+                    automotornuevo.EsMensajero = Mensajero;
+                    automotornuevo.EsClasica = Clasica;
+                    automotornuevo.Tipo_vehiculo = TipoVehiculo;
+
                     //Automotores_ Auto = new Automotores_
                     //(
                     //txt_Placa.Text,
@@ -89,14 +107,18 @@ namespace Projecto_Final_PG4.Presentacion
                     //txt_Modelo.Text,
                     //txt_Combustible.Text,
                     //int.Parse(txt_Cilindraje.Text),
-                    //char.Parse(nulo1),
-                    //char.Parse(Manual),
-                    //char.Parse(nulo3),
-                    //char.Parse(nulo4),
-                    //char.Parse(Mensajero),
-                    //char.Parse(Clasica),
+                    //nulo1),
+                    //Manual),
+                    //nulo3),
+                    //nulo4),
+                    //Mensajero),
+                    //Clasica),
                     //TipoVehiculo
                     //);
+
+                    AutoClienteDTO autoClientenuevo = new AutoClienteDTO();
+                    autoClientenuevo.Cedula = Cliente;
+                    autoClientenuevo.Placa = txt_Placa.Text;
 
                     //Auto_Cliente AutoCliente = new Auto_Cliente
                     //    (
@@ -104,6 +126,9 @@ namespace Projecto_Final_PG4.Presentacion
                     //        txt_Placa.Text
                     //    );
 
+                    SRComunicacionPersona.PrimerServicioClient servicio = new PrimerServicioClient();
+                    servicio.InsertarAutomotor(automotornuevo);
+                    servicio.InsertarAutoCliente(autoClientenuevo);
                     //LogicaAuCli.Insertar(AutoCliente);
                     //LogicaAut.Insertar(Auto);
                     MessageBox.Show("Se Agrego Correctamente el Registro");
@@ -133,6 +158,19 @@ namespace Projecto_Final_PG4.Presentacion
                 }
                 else
                 {
+                    AutomotoresDTO automotornuevo = new AutomotoresDTO();
+                    automotornuevo.Placa = txt_Placa.Text;
+                    automotornuevo.Marca = txt_Marca.Text;
+                    automotornuevo.Modelo = txt_Modelo.Text;
+                    automotornuevo.Tipo_combustible = txt_Combustible.Text;
+                    automotornuevo.Cilindraje = int.Parse(txt_Cilindraje.Text);
+                    automotornuevo.EsTransPublico = nulo1;
+                    automotornuevo.EsManual = Manual;
+                    automotornuevo.EsTransEspe = TransEspecial;
+                    automotornuevo.Tiene_contenedor = TieneContenedor;
+                    automotornuevo.EsMensajero = nulo2;
+                    automotornuevo.EsClasica = nulo3;
+                    automotornuevo.Tipo_vehiculo = TipoVehiculo;
                     //Automotores_ Auto = new Automotores_
                     //(
                     //txt_Placa.Text,
@@ -140,21 +178,27 @@ namespace Projecto_Final_PG4.Presentacion
                     //txt_Modelo.Text,
                     //txt_Combustible.Text,
                     //int.Parse(txt_Cilindraje.Text),
-                    //char.Parse(nulo1),
-                    //char.Parse(Manual),
-                    //char.Parse(TransEspecial),
-                    //char.Parse(TieneContenedor),
-                    //char.Parse(nulo2),
-                    //char.Parse(nulo3),
+                    //nulo1),
+                    //Manual),
+                    //TransEspecial),
+                    //TieneContenedor),
+                    //nulo2),
+                    //nulo3),
                     //TipoVehiculo
                     //);
 
+                    AutoClienteDTO autoClientenuevo = new AutoClienteDTO();
+                    autoClientenuevo.Cedula = Cliente;
+                    autoClientenuevo.Placa = txt_Placa.Text;
                     //Auto_Cliente AutoCliente = new Auto_Cliente
                     //    (
                     //        Cliente,
                     //        txt_Placa.Text
                     //    );
 
+                    SRComunicacionPersona.PrimerServicioClient servicio = new PrimerServicioClient();
+                    servicio.InsertarAutomotor(automotornuevo);
+                    servicio.InsertarAutoCliente(autoClientenuevo);
                     //LogicaAuCli.Insertar(AutoCliente);
                     //LogicaAut.Insertar(Auto);
                     MessageBox.Show("Se Agrego Correctamente el Registro");
@@ -185,6 +229,19 @@ namespace Projecto_Final_PG4.Presentacion
                 }
                 else
                 {
+                    AutomotoresDTO automotornuevo = new AutomotoresDTO();
+                    automotornuevo.Placa = txt_Placa.Text;
+                    automotornuevo.Marca = txt_Marca.Text;
+                    automotornuevo.Modelo = txt_Modelo.Text;
+                    automotornuevo.Tipo_combustible = txt_Combustible.Text;
+                    automotornuevo.Cilindraje = int.Parse(txt_Cilindraje.Text);
+                    automotornuevo.EsTransPublico = TransPublico;
+                    automotornuevo.EsManual = Manual;
+                    automotornuevo.EsTransEspe = nulo1;
+                    automotornuevo.Tiene_contenedor = nulo2;
+                    automotornuevo.EsMensajero = nulo3;
+                    automotornuevo.EsClasica = nulo4;
+                    automotornuevo.Tipo_vehiculo = TipoVehiculo;
                     //Automotores_ Auto = new Automotores_
                     //(
                     //txt_Placa.Text,
@@ -192,21 +249,27 @@ namespace Projecto_Final_PG4.Presentacion
                     //txt_Modelo.Text,
                     //txt_Combustible.Text,
                     //int.Parse(txt_Cilindraje.Text),
-                    //char.Parse(TransPublico),
-                    //char.Parse(Manual),
-                    //char.Parse(nulo1),
-                    //char.Parse(nulo2),
-                    //char.Parse(nulo3),
-                    //char.Parse(nulo4),
+                    //TransPublico),
+                    //Manual),
+                    //nulo1),
+                    //nulo2),
+                    //nulo3),
+                    //nulo4),
                     //TipoVehiculo
                     //);
 
+                    AutoClienteDTO autoClientenuevo = new AutoClienteDTO();
+                    autoClientenuevo.Cedula = Cliente;
+                    autoClientenuevo.Placa = txt_Placa.Text;
                     //Auto_Cliente AutoCliente = new Auto_Cliente
                     //    (
                     //        Cliente,
                     //        txt_Placa.Text
                     //    );
 
+                    SRComunicacionPersona.PrimerServicioClient servicio = new PrimerServicioClient();
+                    servicio.InsertarAutomotor(automotornuevo);
+                    servicio.InsertarAutoCliente(autoClientenuevo);
                     //LogicaAuCli.Insertar(AutoCliente);
                     //LogicaAut.Insertar(Auto);
                     MessageBox.Show("Se Agrego Correctamente el Registro");
@@ -216,7 +279,7 @@ namespace Projecto_Final_PG4.Presentacion
             }
         }
 
-        private void LimpiarDatos() 
+        private void LimpiarDatos()
         {
             cbx_Tipo_Vehiculo.Enabled = true;
             txt_ID_AutoMotor.Text = "";
@@ -236,6 +299,7 @@ namespace Projecto_Final_PG4.Presentacion
 
             cbx_Tipo_Vehiculo.SelectedIndex = 0;
             cargar_datagrid();
+            btn_Agregar.Enabled = true;
         }
 
         private void inavilitar()
@@ -267,20 +331,26 @@ namespace Projecto_Final_PG4.Presentacion
 
         private void cargar_datagrid()
         {
+            SRComunicacionPersona.PrimerServicioClient cargarDatosUsr = new PrimerServicioClient();
             dtg_Clientes_Vehiculos.DataSource = null;
+            dtg_Clientes_Vehiculos.DataSource = cargarDatosUsr.ObtenerTodosAutomotores().lista;
+            dtg_Clientes_Vehiculos.AutoResizeColumns();
+
+
+            //dtg_Clientes_Vehiculos.DataSource = null;
             //dtg_Clientes_Vehiculos.DataSource = LogicaAuCli.BuscarTodos2();
 
-            this.dtg_Clientes_Vehiculos.Columns["id_automotor"].Visible = false;
-            this.dtg_Clientes_Vehiculos.Columns["esClasica_automotores"].Visible = false;
-            this.dtg_Clientes_Vehiculos.Columns["esManual_automotores"].Visible = false;
-            this.dtg_Clientes_Vehiculos.Columns["esMensajero_automotores"].Visible = false;
-            this.dtg_Clientes_Vehiculos.Columns["esTransEspe_automotores"].Visible = false;
-            this.dtg_Clientes_Vehiculos.Columns["esTransPublico_automotores"].Visible = false;
-            this.dtg_Clientes_Vehiculos.Columns["id_autocliente"].Visible = false;
-            this.dtg_Clientes_Vehiculos.Columns["cedula_autocliente"].Visible = false;
-            this.dtg_Clientes_Vehiculos.Columns["placa_autocliente"].Visible = false;
-            this.dtg_Clientes_Vehiculos.Columns["tipo_Vehiculo_automotores"].Visible = false;
-            this.dtg_Clientes_Vehiculos.Columns["tiene_contenedor_automotores"].Visible = false;
+            this.dtg_Clientes_Vehiculos.Columns["ID_automotor"].Visible = false;
+            this.dtg_Clientes_Vehiculos.Columns["EsClasica"].Visible = false;
+            this.dtg_Clientes_Vehiculos.Columns["EsManual"].Visible = false;
+            this.dtg_Clientes_Vehiculos.Columns["EsMensajero"].Visible = false;
+            this.dtg_Clientes_Vehiculos.Columns["EsTransEspe"].Visible = false;
+            this.dtg_Clientes_Vehiculos.Columns["EsTransPublico"].Visible = false;
+            //this.dtg_Clientes_Vehiculos.Columns["id_autocliente"].Visible = false;//
+            //this.dtg_Clientes_Vehiculos.Columns["cedula_autocliente"].Visible = false;//
+            this.dtg_Clientes_Vehiculos.Columns["Placa"].Visible = false;//
+            this.dtg_Clientes_Vehiculos.Columns["Tipo_Vehiculo"].Visible = false;
+            this.dtg_Clientes_Vehiculos.Columns["Tiene_contenedor"].Visible = false;
         }
 
         private void Validar_Modificar()
@@ -308,6 +378,20 @@ namespace Projecto_Final_PG4.Presentacion
                 }
                 else
                 {
+                    AutomotoresDTO automotornuevo = new AutomotoresDTO();
+                    automotornuevo.ID_automotor = int.Parse(txt_ID.Text);
+                    automotornuevo.Placa = txt_Placa.Text;
+                    automotornuevo.Marca = txt_Marca.Text;
+                    automotornuevo.Modelo = txt_Modelo.Text;
+                    automotornuevo.Tipo_combustible = txt_Combustible.Text;
+                    automotornuevo.Cilindraje = int.Parse(txt_Cilindraje.Text);
+                    automotornuevo.EsTransPublico = nulo1;
+                    automotornuevo.EsManual = Manual;
+                    automotornuevo.EsTransEspe = nulo3;
+                    automotornuevo.Tiene_contenedor = nulo4;
+                    automotornuevo.EsMensajero = Mensajero;
+                    automotornuevo.EsClasica = Clasica;
+                    automotornuevo.Tipo_vehiculo = TipoVehiculo;
 
                     //Automotores_ Auto = new Automotores_();
 
@@ -316,20 +400,26 @@ namespace Projecto_Final_PG4.Presentacion
                     //Auto.Modelo = txt_Modelo.Text;
                     //Auto.Tipo_combustible = txt_Combustible.Text;
                     //Auto.Cilindraje = int.Parse(txt_Cilindraje.Text);
-                    //Auto.EsTransPublico = char.Parse(nulo1);
-                    //Auto.EsManual = char.Parse(Manual);
-                    //Auto.EsTransEspe = char.Parse(nulo3);
-                    //Auto.Tiene_contenedor = char.Parse(nulo4);
-                    //Auto.EsMensajero = char.Parse(Mensajero);
-                    //Auto.EsClasica = char.Parse(Clasica);
+                    //Auto.EsTransPublico = nulo1;
+                    //Auto.EsManual = Manual;
+                    //Auto.EsTransEspe = nulo3;
+                    //Auto.Tiene_contenedor = nulo4;
+                    //Auto.EsMensajero = Mensajero;
+                    //Auto.EsClasica = Clasica;
                     //Auto.Tipo_vehiculo = TipoVehiculo;
 
+                    AutoClienteDTO autoClientenuevo = new AutoClienteDTO();
+                    autoClientenuevo.ID_Auto_Cliente = int.Parse(Cliente);
+                    autoClientenuevo.Placa = txt_Placa.Text;
                     //LogicaAut.Modificar(Auto);
 
                     //Auto_Cliente AutoCliente = new Auto_Cliente();
 
                     //AutoCliente.Cedula_autocliente = Cliente;
                     //AutoCliente.Placa_autocliente = txt_Placa.Text;
+                    SRComunicacionPersona.PrimerServicioClient servicio = new PrimerServicioClient();
+                    servicio.ModificarAutomotor(automotornuevo);
+                    servicio.ModificarAutoCliente(autoClientenuevo);
                     //LogicaAuCli.Modificar(AutoCliente);
 
                     MessageBox.Show("Se Modifico Correctamente el Registro");
@@ -362,6 +452,21 @@ namespace Projecto_Final_PG4.Presentacion
                 }
                 else
                 {
+                    AutomotoresDTO automotornuevo = new AutomotoresDTO();
+                    automotornuevo.ID_automotor = int.Parse(txt_ID.Text);
+                    automotornuevo.Placa = txt_Placa.Text;
+                    automotornuevo.Marca = txt_Marca.Text;
+                    automotornuevo.Modelo = txt_Modelo.Text;
+                    automotornuevo.Tipo_combustible = txt_Combustible.Text;
+                    automotornuevo.Cilindraje = int.Parse(txt_Cilindraje.Text);
+                    automotornuevo.EsTransPublico = nulo1;
+                    automotornuevo.EsManual = Manual;
+                    automotornuevo.EsTransEspe = TransporteEspe;
+                    automotornuevo.Tiene_contenedor = TieneConte;
+                    automotornuevo.EsMensajero = nulo3;
+                    automotornuevo.EsClasica = nulo4;
+                    automotornuevo.Tipo_vehiculo = TipoVehiculo;
+
                     //Automotores_ Auto = new Automotores_();
 
                     //Auto.Placa = txt_Placa.Text;
@@ -369,15 +474,23 @@ namespace Projecto_Final_PG4.Presentacion
                     //Auto.Modelo = txt_Modelo.Text;
                     //Auto.Tipo_combustible = txt_Combustible.Text;
                     //Auto.Cilindraje = int.Parse(txt_Cilindraje.Text);
-                    //Auto.EsTransPublico = char.Parse(nulo1);
-                    //Auto.EsManual = char.Parse(Manual);
-                    //Auto.EsTransEspe = char.Parse(TransporteEspe);
-                    //Auto.Tiene_contenedor = char.Parse(TieneConte);
-                    //Auto.EsMensajero = char.Parse(nulo3);
-                    //Auto.EsClasica = char.Parse(nulo4);
+                    //Auto.EsTransPublico = nulo1;
+                    //Auto.EsManual = Manual;
+                    //Auto.EsTransEspe = TransporteEspe;
+                    //Auto.Tiene_contenedor = TieneConte;
+                    //Auto.EsMensajero = nulo3;
+                    //Auto.EsClasica = nulo4;
                     //Auto.Tipo_vehiculo = TipoVehiculo;
 
                     //LogicaAut.Modificar(Auto);
+
+                    AutoClienteDTO autoClientenuevo = new AutoClienteDTO();
+                    autoClientenuevo.ID_Auto_Cliente = int.Parse(Cliente);
+                    autoClientenuevo.Placa = txt_Placa.Text;
+
+                    SRComunicacionPersona.PrimerServicioClient servicio = new PrimerServicioClient();
+                    servicio.ModificarAutomotor(automotornuevo);
+                    servicio.ModificarAutoCliente(autoClientenuevo);
 
                     //Auto_Cliente AutoCliente = new Auto_Cliente();
 
@@ -412,6 +525,21 @@ namespace Projecto_Final_PG4.Presentacion
                 }
                 else
                 {
+                    AutomotoresDTO automotornuevo = new AutomotoresDTO();
+                    automotornuevo.ID_automotor = int.Parse(txt_ID.Text);
+                    automotornuevo.Placa = txt_Placa.Text;
+                    automotornuevo.Marca = txt_Marca.Text;
+                    automotornuevo.Modelo = txt_Modelo.Text;
+                    automotornuevo.Tipo_combustible = txt_Combustible.Text;
+                    automotornuevo.Cilindraje = int.Parse(txt_Cilindraje.Text);
+                    automotornuevo.EsTransPublico = TransportePub;
+                    automotornuevo.EsManual = Manual;
+                    automotornuevo.EsTransEspe = nulo1;
+                    automotornuevo.Tiene_contenedor = nulo2;
+                    automotornuevo.EsMensajero = nulo3;
+                    automotornuevo.EsClasica = nulo4;
+                    automotornuevo.Tipo_vehiculo = TipoVehiculo;
+
                     //Automotores_ Auto = new Automotores_();
 
                     //Auto.Placa = txt_Placa.Text;
@@ -420,17 +548,23 @@ namespace Projecto_Final_PG4.Presentacion
                     //Auto.Tipo_combustible = txt_Combustible.Text;
                     //Auto.Cilindraje = int.Parse(txt_Cilindraje.Text);
                     //Auto.EsTransPublico = char.Parse(TransportePub);
-                    //Auto.EsManual = char.Parse(Manual);
-                    //Auto.EsTransEspe = char.Parse(nulo1);
+                    //Auto.EsManual = Manual;
+                    //Auto.EsTransEspe = nulo1;
                     //Auto.Tiene_contenedor = char.Parse(nulo2);
-                    //Auto.EsMensajero = char.Parse(nulo3);
-                    //Auto.EsClasica = char.Parse(nulo4);
+                    //Auto.EsMensajero = nulo3;
+                    //Auto.EsClasica = nulo4;
                     //Auto.Tipo_vehiculo = TipoVehiculo;
 
                     //LogicaAut.Modificar(Auto);
 
+                    AutoClienteDTO autoClientenuevo = new AutoClienteDTO();
+                    autoClientenuevo.ID_Auto_Cliente = int.Parse(Cliente);
+                    autoClientenuevo.Placa = txt_Placa.Text;
                     //Auto_Cliente AutoCliente = new Auto_Cliente();
 
+                    SRComunicacionPersona.PrimerServicioClient servicio = new PrimerServicioClient();
+                    servicio.ModificarAutomotor(automotornuevo);
+                    servicio.ModificarAutoCliente(autoClientenuevo);
                     //AutoCliente.Cedula_autocliente = Cliente;
                     //AutoCliente.Placa_autocliente = txt_Placa.Text;
                     //LogicaAuCli.Modificar(AutoCliente);
@@ -441,11 +575,12 @@ namespace Projecto_Final_PG4.Presentacion
                 }
             }
             txt_Placa.Enabled = true;
+            btn_Agregar.Enabled = true;
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            //Validar_Agregar();
+            Validar_Agregar();
         }
 
         private void cbx_Tipo_Vehiculo_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -590,7 +725,7 @@ namespace Projecto_Final_PG4.Presentacion
             cbx_Tipo_Vehiculo.Enabled = true;
             cbx_Tipo_Vehiculo.Text = "Seleccione";
             inavilitar();
-            
+
 
         }
 
@@ -604,11 +739,18 @@ namespace Projecto_Final_PG4.Presentacion
         {
             try
             {
+                SRComunicacionPersona.PrimerServicioClient servicio = new PrimerServicioClient();
+                AutomotoresDTO automotor = new AutomotoresDTO();
+                automotor.ID_automotor = int.Parse(txt_ID.Text);
+                AutoClienteDTO autoCli = new AutoClienteDTO();
+                autoCli.ID_Auto_Cliente = int.Parse(txt_ID_AutoMotor.Text);
+                servicio.EliminarAutomotor(automotor.ID_automotor);
+                servicio.EliminarAutoCliente(autoCli.ID_Auto_Cliente);
                 //LogicaAut.Eliminar(txt_Placa.Text);
                 //LogicaAuCli.Eliminar(txt_ID_AutoMotor.Text);
-                
 
-                MessageBox.Show("Se Elimino Correctamente el registro","Eliminacion de Registro",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                MessageBox.Show("Se Elimino Correctamente el registro", "Eliminacion de Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarDatos();
                 cargar_datagrid();
             }
@@ -618,7 +760,7 @@ namespace Projecto_Final_PG4.Presentacion
                 MessageBox.Show("Error: " + ex.Message);
             }
             inavilitar();
-            
+
         }
 
         private void dtg_Clientes_Vehiculos_MouseClick(object sender, MouseEventArgs e)
@@ -626,9 +768,9 @@ namespace Projecto_Final_PG4.Presentacion
             txt_Placa.Enabled = false;
             cbx_TipoVehiculoM.Enabled = false;
             cbx_Tipo_Vehiculo.Enabled = false;
-            string TipoVehiculo = dtg_Clientes_Vehiculos.CurrentRow.Cells[13].Value.ToString();
-            txt_ID.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[2].Value.ToString();
-            txt_ID_AutoMotor.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[14].Value.ToString();
+            string TipoVehiculo = dtg_Clientes_Vehiculos.CurrentRow.Cells[12].Value.ToString();
+            txt_ID.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[6].Value.ToString();
+            txt_ID_AutoMotor.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[6].Value.ToString();
 
             if (TipoVehiculo.Equals("Motos") && int.Parse(txt_ID.Text) >= 1)
             {
@@ -655,21 +797,37 @@ namespace Projecto_Final_PG4.Presentacion
                 cbx_EsMensajero.SelectedIndex = 0;
                 cbx_EsClasica.SelectedIndex = 0;
                 cbx_Manual.SelectedIndex = 0;
-                
 
-                txt_Placa.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[3].Value.ToString();
-                txt_Marca.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[4].Value.ToString();
-                txt_Modelo.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[5].Value.ToString();
-                txt_Combustible.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[7].Value.ToString();
-                txt_Cilindraje.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[6].Value.ToString();
-                cbx_Manual.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[9].Value.ToString();
-                cbx_EsMensajero.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[10].Value.ToString();//
-                cbx_EsClasica.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[8].Value.ToString();//
-                string text = dtg_Clientes_Vehiculos.CurrentRow.Cells[13].Value.ToString();
+                txt_ID.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[6].Value.ToString();
+                txt_Placa.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[9].Value.ToString();
+                txt_Marca.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[7].Value.ToString();
+                txt_Modelo.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[8].Value.ToString();
+                txt_Combustible.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[11].Value.ToString();
+                txt_Cilindraje.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[0].Value.ToString();
+                cbx_Manual.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[2].Value.ToString();
+                cbx_EsMensajero.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[3].Value.ToString();
+                cbx_EsClasica.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[1].Value.ToString();
+                string text = dtg_Clientes_Vehiculos.CurrentRow.Cells[12].Value.ToString();
                 cbx_TipoVehiculoM.Text = text;
+                SRComunicacionPersona.PrimerServicioClient servicio = new PrimerServicioClient();
+                var listaAutomores = servicio.ObtenerTodosAutomotores().lista;
+                var listaAutoCliente = servicio.ObtenerTodosAutoClientes().lista;
+                string placaselect = dtg_Clientes_Vehiculos.CurrentRow.Cells[9].Value.ToString();
+                for (int i = 0; i < listaAutomores.Length; i++)
+                {
+                    string placaAutoCli = listaAutoCliente[i].Placa;
+                    string placaAutomotor = listaAutomores[i].Placa;
+                    if (placaAutoCli.Equals(placaselect))
+                    {
+                        cbx_Clientes.Text = listaAutoCliente[i].Cedula;
+                    }
+
+                }
                 //lbl_TipoVehiculo.Text = "Tipo de Vehiculo" + " " + text.ToString();
                 //cbx_Tipo_Vehiculo.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[13].Value.ToString();
-                cbx_Clientes.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[15].Value.ToString();
+                //SRComunicacionPersona.PrimerServicioClient buscarCliente = new PrimerServicioClient();
+                //var listaClientes = buscarCliente.ObtenerPersonaID(dtg_Clientes_Vehiculos.CurrentRow.Cells[6].Value.ToString());
+                //cbx_Clientes.Text = listaClientes.ID_persona.ToString();//cbx_Clientes.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[15].Value.ToString();
 
 
             }
@@ -701,20 +859,37 @@ namespace Projecto_Final_PG4.Presentacion
                 cbx_TransEspecial.SelectedIndex = 0;
                 cbx_TieneContenedor.SelectedIndex = 0;
 
-                txt_ID.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[2].Value.ToString();
-                txt_Placa.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[3].Value.ToString();
-                txt_Marca.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[4].Value.ToString();
-                txt_Modelo.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[5].Value.ToString();
-                txt_Combustible.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[7].Value.ToString();
-                txt_Cilindraje.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[6].Value.ToString();
-                cbx_Manual.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[9].Value.ToString();
-                cbx_TransEspecial.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[11].Value.ToString();
-                cbx_TieneContenedor.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[17].Value.ToString();///////
-                string text = dtg_Clientes_Vehiculos.CurrentRow.Cells[13].Value.ToString();
+                txt_ID.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[6].Value.ToString();
+                txt_Placa.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[9].Value.ToString();
+                txt_Marca.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[7].Value.ToString();
+                txt_Modelo.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[8].Value.ToString();
+                txt_Combustible.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[11].Value.ToString();
+                txt_Cilindraje.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[0].Value.ToString();
+                cbx_Manual.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[2].Value.ToString();
+                cbx_TransEspecial.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[4].Value.ToString();
+                cbx_TieneContenedor.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[10].Value.ToString();
+                string text = dtg_Clientes_Vehiculos.CurrentRow.Cells[12].Value.ToString();
                 cbx_TipoVehiculoM.Text = text;
+
+                SRComunicacionPersona.PrimerServicioClient servicio = new PrimerServicioClient();
+                var listaAutomores = servicio.ObtenerTodosAutomotores().lista;
+                var listaAutoCliente = servicio.ObtenerTodosAutoClientes().lista;
+                string placaselect = dtg_Clientes_Vehiculos.CurrentRow.Cells[9].Value.ToString();
+                for (int i = 0; i < listaAutomores.Length; i++)
+                {
+                    string placaAutoCli = listaAutoCliente[i].Placa;
+                    string placaAutomotor = listaAutomores[i].Placa;
+                    if (placaAutoCli.Equals(placaselect))
+                    {
+                        cbx_Clientes.Text = listaAutoCliente[i].Cedula;
+                    }
+
+                }
                 //lbl_TipoVehiculo.Text = "Tipo de Vehiculo" + " " + text.ToString();
                 //cbx_Tipo_Vehiculo.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[13].Value.ToString();
-                cbx_Clientes.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[15].Value.ToString();
+                //SRComunicacionPersona.PrimerServicioClient buscarCliente = new PrimerServicioClient();
+                //var listaClientes = buscarCliente.ObtenerPersonaID(dtg_Clientes_Vehiculos.CurrentRow.Cells[6].Value.ToString());
+                //cbx_Clientes.Text = listaClientes.ID_persona.ToString();//cbx_Clientes.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[15].Value.ToString();
 
             }
 
@@ -742,22 +917,39 @@ namespace Projecto_Final_PG4.Presentacion
                 cbx_TransPublico.SelectedIndex = 0;
                 cbx_Manual.SelectedIndex = 0;
 
-                txt_ID.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[2].Value.ToString();
-                txt_Placa.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[3].Value.ToString();
-                txt_Marca.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[4].Value.ToString();
-                txt_Modelo.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[5].Value.ToString();
-                txt_Combustible.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[7].Value.ToString();
-                txt_Cilindraje.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[6].Value.ToString();
-                cbx_Manual.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[9].Value.ToString();
-                cbx_TransPublico.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[12].Value.ToString();
-                cbx_TieneContenedor.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[17].Value.ToString();///////
-                string text = dtg_Clientes_Vehiculos.CurrentRow.Cells[13].Value.ToString();
+                txt_ID.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[6].Value.ToString();
+                txt_Placa.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[9].Value.ToString();
+                txt_Marca.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[7].Value.ToString();
+                txt_Modelo.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[8].Value.ToString();
+                txt_Combustible.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[11].Value.ToString();
+                txt_Cilindraje.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[0].Value.ToString();
+                cbx_Manual.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[2].Value.ToString();
+                cbx_TransPublico.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[5].Value.ToString();
+                cbx_TieneContenedor.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[10].Value.ToString();///////
+                string text = dtg_Clientes_Vehiculos.CurrentRow.Cells[12].Value.ToString();
                 cbx_TipoVehiculoM.Text = text;
+                SRComunicacionPersona.PrimerServicioClient servicio = new PrimerServicioClient();
+                var listaAutomores = servicio.ObtenerTodosAutomotores().lista;
+                var listaAutoCliente = servicio.ObtenerTodosAutoClientes().lista;
+                string placaselect = dtg_Clientes_Vehiculos.CurrentRow.Cells[9].Value.ToString();
+                for (int i = 0; i < listaAutomores.Length; i++)
+                {
+                    string placaAutoCli = listaAutoCliente[i].Placa;
+                    string placaAutomotor = listaAutomores[i].Placa;
+                    if (placaAutoCli.Equals(placaselect))
+                    {
+                        cbx_Clientes.Text = listaAutoCliente[i].Cedula;
+                    }
+
+                }
                 //lbl_TipoVehiculo.Text = "Tipo de Vehiculo" + " " + text.ToString();
                 //cbx_Tipo_Vehiculo.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[13].Value.ToString();
-                cbx_Clientes.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[15].Value.ToString();
+                //SRComunicacionPersona.PrimerServicioClient buscarCliente = new PrimerServicioClient();
+                //var listaClientes = buscarCliente.ObtenerPersonaID(dtg_Clientes_Vehiculos.CurrentRow.Cells[6].Value.ToString());
+                //cbx_Clientes.Text = listaClientes.ID_persona.ToString();//cbx_Clientes.Text = dtg_Clientes_Vehiculos.CurrentRow.Cells[15].Value.ToString();
             }
             txt_Placa.Enabled = true;
+            btn_Agregar.Enabled = false;
         }
 
         private void cbx_Tipo_Vehiculo_MouseClick(object sender, MouseEventArgs e)
@@ -767,6 +959,31 @@ namespace Projecto_Final_PG4.Presentacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            SRComunicacionPersona.PrimerServicioClient cargarAutomotor = new PrimerServicioClient();
+
+            try
+            {
+                if (cargarAutomotor != null)
+                {
+                    BindingSource source = new BindingSource();
+                    source.DataSource = cargarAutomotor.ObtenerAutomotorID(int.Parse(txt_Buscar.Text));
+                    dtg_Clientes_Vehiculos.DataSource = source;
+                    dtg_Clientes_Vehiculos.AutoResizeColumns();
+                }
+                else
+                {
+                    string mensaje = String.Format("Usuario con el numero de ID: {0} ,no se encuentra registrado", txt_Buscar.Text);
+                    MessageBox.Show(mensaje, "No se encontro registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_Buscar.Text = "";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al ralizar la busqueda por numero de id del libro: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
             /*List<Auto_Cliente> personaBuscar = LogicaAuCli.Buscar(int.Parse(txt_Buscar.Text));
 
             if (personaBuscar != null)
@@ -778,6 +995,10 @@ namespace Projecto_Final_PG4.Presentacion
 
         private void btBuscarTodos_Click(object sender, EventArgs e)
         {
+            cargar_datagrid();
+            LimpiarDatos();
+            txt_Buscar.Text = "";
+
             /*dtg_Clientes_Vehiculos.DataSource = null;
             dtg_Clientes_Vehiculos.DataSource = LogicaAuCli.BuscarTodos2();
             txt_Buscar.Text = "";*/

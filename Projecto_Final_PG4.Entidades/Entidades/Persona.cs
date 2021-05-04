@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace Projecto_Final_PG4.Entidades
 {
     public class Persona
-    {        
-        public int ID_persona { get; set; } 
+    {
+        public int ID_persona { get; set; }
 
         [Key]
         public string cedula { get; set; }

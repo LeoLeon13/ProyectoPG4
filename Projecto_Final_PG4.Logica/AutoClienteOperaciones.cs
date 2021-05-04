@@ -11,7 +11,7 @@ namespace Projecto_Final_PG4.Logica
     public class AutoClienteOperaciones
     {
         IUnitOfWork uow = new UnitOfWork();
-               
+
 
         public Auto_Cliente ObtenerId(int id)
         {
@@ -51,7 +51,7 @@ namespace Projecto_Final_PG4.Logica
 
         public void Modificar(Auto_Cliente p)
         {
-            Auto_Cliente autoE = uow.AutoCliente.ObtenerId(p.cedula);
+            Auto_Cliente autoE = uow.AutoCliente.ObtenerId(p.ID_Auto_Cliente);
             if (autoE != null)
             {
                 uow.DbContexto.Entry(autoE).CurrentValues.SetValues(p);

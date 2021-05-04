@@ -49,9 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoClienteOperaciones.cs" />
+    <Compile Include="AutomotorOperaciones.cs" />
     <Compile Include="PersonaOperaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiciosClienteOperaciones.cs" />
     <Compile Include="ServiciosOperaciones.cs" />
+    <Compile Include="TipoServicioOperaciones.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Projecto_Final_PG4.AccesoDatos\Projecto_Final_PG4.AccesoDatos.csproj">

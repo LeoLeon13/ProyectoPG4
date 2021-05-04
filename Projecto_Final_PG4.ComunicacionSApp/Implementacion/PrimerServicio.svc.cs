@@ -17,8 +17,11 @@ namespace Projecto_Final_PG4.ComunicacionSApp
         PersonaOperaciones personaOperaciones = new PersonaOperaciones();
         AutoClienteOperaciones autoclienteOperaciones = new AutoClienteOperaciones();
         ServiciosOperaciones serviciosOperaciones = new ServiciosOperaciones();
+        AutomotorOperaciones automotoresOperaciones = new AutomotorOperaciones();
+        TipoServicioOperaciones tipoServicioOperaciones = new TipoServicioOperaciones();
+        ServiciosClienteOperaciones servicioClienteOp = new ServiciosClienteOperaciones();
 
-        public void EliminarPersona(int id)
+        public void EliminarPersona(string id)
         {
             personaOperaciones.Eliminar(id);
         }
@@ -39,7 +42,7 @@ namespace Projecto_Final_PG4.ComunicacionSApp
         public void ModificarPersona(PersonaDTO persona)
         {
             Persona destino = new Persona();
-            
+
             var config = new MapperConfiguration(cfg => cfg.CreateMap<PersonaDTO, Persona>());
             var mapper = config.CreateMapper();
 
@@ -62,7 +65,7 @@ namespace Projecto_Final_PG4.ComunicacionSApp
             return destinodto;
         }
 
-        public PersonaDTO.ListaPersonas ObtenerTodos()
+        public PersonaDTO.ListaPersonas ObtenerTodosPersona()
         {
             List<Persona> listPersonas = personaOperaciones.ObtenerTodos();
             PersonaDTO.ListaPersonas destinoListaPersona = new PersonaDTO.ListaPersonas();
@@ -94,7 +97,7 @@ namespace Projecto_Final_PG4.ComunicacionSApp
                     Departamento = persona.departamento
                     ,
                     Pass = persona.pass
-                    
+
                 });
             }
 
@@ -111,7 +114,7 @@ namespace Projecto_Final_PG4.ComunicacionSApp
         public void InsertarAutoCliente(AutoClienteDTO cliente)
         {
             Auto_Cliente destino = new Auto_Cliente();
-           
+
             var config = new MapperConfiguration(cfg => cfg.CreateMap<AutoClienteDTO, Auto_Cliente>());
             var mapper = config.CreateMapper();
 
@@ -145,7 +148,7 @@ namespace Projecto_Final_PG4.ComunicacionSApp
             return destinodto;
         }
 
-        public AutoClienteDTO.ListaAutoCliente ObtenerTodosClientes()
+        public AutoClienteDTO.ListaAutoCliente ObtenerTodosAutoClientes()
         {
             List<Auto_Cliente> listaCliente = autoclienteOperaciones.ObtenerTodos();
             AutoClienteDTO.ListaAutoCliente destinoListaCleinte = new AutoClienteDTO.ListaAutoCliente();
@@ -154,7 +157,7 @@ namespace Projecto_Final_PG4.ComunicacionSApp
             {
                 destinoListaCleinte.lista.Add(new AutoClienteDTO()
                 {
-                    ID_Auto_Cliente1 = cleinte.ID_Auto_Cliente
+                    ID_Auto_Cliente = cleinte.ID_Auto_Cliente
                     ,
                     Cedula = cleinte.cedula
                     ,
@@ -205,7 +208,7 @@ namespace Projecto_Final_PG4.ComunicacionSApp
 
             destinodto = mapper.Map<ServiciosDTO>(origenservicio);
 
-            destinodto.Placa = origenservicio.placa;
+            destinodto.ID_servicio = origenservicio.ID_servicio;
 
             return destinodto;
         }
@@ -219,9 +222,9 @@ namespace Projecto_Final_PG4.ComunicacionSApp
             {
                 destinoListaServicios.lista.Add(new ServiciosDTO()
                 {
-                    ID_servicio1 = srv.ID_servicio
+                    ID_servicio = srv.ID_servicio
                     ,
-                    ID_tipo_servicio1 = srv.ID_tipo_servicio
+                    ID_tipo_servicio = srv.ID_tipo_servicio
                     ,
                     Fecha = srv.fecha
                     ,
@@ -236,6 +239,220 @@ namespace Projecto_Final_PG4.ComunicacionSApp
             }
 
             return destinoListaServicios;
+        }
+
+        //Servicios Cliente
+
+        public void EliminarServicioCliente(int id)
+        {
+            servicioClienteOp.Eliminar(id);
+        }
+
+        public void InsertarServicioCliente(ServiciosClienteDTO servicio)
+        {
+            Servicios_Cliente destino = new Servicios_Cliente();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<ServiciosClienteDTO, Servicios_Cliente>());
+            var mapper = config.CreateMapper();
+
+            destino = mapper.Map<Servicios_Cliente>(servicio);
+            servicioClienteOp.Insertar(destino);
+        }
+
+        public void ModificarServicioCliente(ServiciosClienteDTO servicios)
+        {
+            Servicios_Cliente destino = new Servicios_Cliente();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<ServiciosClienteDTO, Servicios_Cliente>());
+            var mapper = config.CreateMapper();
+
+            destino = mapper.Map<Servicios_Cliente>(servicios);
+            servicioClienteOp.Modificar(destino);
+        }
+
+        public ServiciosClienteDTO ObtenerServicioClienteID(int id)
+        {
+
+            Servicios_Cliente origenservicio = servicioClienteOp.ObtenerId(id);
+            ServiciosClienteDTO destinodto = new ServiciosClienteDTO();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Servicios_Cliente, ServiciosClienteDTO>());
+            var mapper = config.CreateMapper();
+
+            destinodto = mapper.Map<ServiciosClienteDTO>(origenservicio);
+
+            destinodto.ID_Servicio_Cliente = origenservicio.ID_Servicio_Cliente;
+
+            return destinodto;
+        }
+
+        public ServiciosClienteDTO.ListaServiciosCliente ObtenerTodosServicioCliente()
+        {
+            List<Servicios_Cliente> listaServicios = servicioClienteOp.ObtenerTodos();
+            ServiciosClienteDTO.ListaServiciosCliente destinoListaServicios = new ServiciosClienteDTO.ListaServiciosCliente();
+            destinoListaServicios.lista = new List<ServiciosClienteDTO>();
+            foreach (Servicios_Cliente srv in listaServicios)
+            {
+                destinoListaServicios.lista.Add(new ServiciosClienteDTO()
+                {
+                    ID_Servicio_Cliente = srv.ID_Servicio_Cliente
+                    ,
+                    Cedula = srv.cedula
+                    ,
+                    Placa = srv.placa
+                    ,
+                    Servicio_Seleccionado = srv.Servicio_Seleccionado
+                });
+            }
+
+            return destinoListaServicios;
+        }
+
+        //Automotores
+
+        public void EliminarAutomotor(int id)
+        {
+            automotoresOperaciones.Eliminar(id);
+        }
+
+        public void InsertarAutomotor(AutomotoresDTO automotor)
+        {
+            Automotores destino = new Automotores();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<AutomotoresDTO, Automotores>());
+            var mapper = config.CreateMapper();
+
+            destino = mapper.Map<Automotores>(automotor);
+            automotoresOperaciones.Insertar(destino);
+        }
+
+        public void ModificarAutomotor(AutomotoresDTO automotor)
+        {
+            Automotores destino = new Automotores();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<AutomotoresDTO, Automotores>());
+            var mapper = config.CreateMapper();
+
+            destino = mapper.Map<Automotores>(automotor);
+            automotoresOperaciones.Modificar(destino);
+        }
+
+        public AutomotoresDTO ObtenerAutomotorID(int id)//esta variable la cambie de int a string y la volvi a int
+        {
+
+            Automotores origenservicio = automotoresOperaciones.ObtenerId(id);
+            AutomotoresDTO destinodto = new AutomotoresDTO();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<Automotores, AutomotoresDTO>());
+            var mapper = config.CreateMapper();
+
+            destinodto = mapper.Map<AutomotoresDTO>(origenservicio);
+
+            destinodto.ID_automotor = origenservicio.ID_automotor;
+
+            return destinodto;
+        }
+
+        public AutomotoresDTO.ListaAutomotores ObtenerTodosAutomotores()
+        {
+            List<Automotores> listaAutomotores = automotoresOperaciones.ObtenerTodos();
+            AutomotoresDTO.ListaAutomotores destinoListaServicios = new AutomotoresDTO.ListaAutomotores();
+            destinoListaServicios.lista = new List<AutomotoresDTO>();
+            foreach (Automotores srv in listaAutomotores)
+            {
+                destinoListaServicios.lista.Add(new AutomotoresDTO()
+                {
+                    ID_automotor = srv.ID_automotor
+                    ,
+                    Placa = srv.placa
+                    ,
+                    Marca = srv.marca
+                    ,
+                    Modelo = srv.modelo
+                    ,
+                    Tipo_combustible = srv.tipo_combustible
+                    ,
+                    Cilindraje = srv.cilindraje
+                    ,
+                    EsTransPublico = srv.esTransPublico
+                    ,
+                    EsManual = srv.esManual
+                    ,
+                    EsTransEspe = srv.esTransEspe
+                    ,
+                    Tiene_contenedor = srv.tiene_contenedor
+                    ,
+                    EsMensajero = srv.esMensajero
+                    ,
+                    EsClasica = srv.esClasica
+                    ,
+                    Tipo_vehiculo = srv.tipo_vehiculo
+
+                });
+            }
+
+            return destinoListaServicios;
+        }
+
+        //Tipos de Servicio
+
+        public void EliminarTipoServicio(int id)
+        {
+            tipoServicioOperaciones.EliminarTipoServicios(id);
+        }
+
+        public void InsertarTipoServicio(TipoServicioDTO tipoSrv)
+        {
+            TipoServicio destino = new TipoServicio();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<TipoServicioDTO, TipoServicio>());
+            var mapper = config.CreateMapper();
+
+            destino = mapper.Map<TipoServicio>(tipoSrv);
+            tipoServicioOperaciones.InsertarTipoServicios(destino);
+        }
+
+        public void ModificarTipoServicio(TipoServicioDTO tipoSrv)
+        {
+            TipoServicio destino = new TipoServicio();
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<TipoServicioDTO, TipoServicio>());
+            var mapper = config.CreateMapper();
+
+            destino = mapper.Map<TipoServicio>(tipoSrv);
+            tipoServicioOperaciones.ModificarTipoServicios(destino);
+        }
+
+        public TipoServicioDTO ObtenerTipoServicioID(int id)
+        {
+
+            TipoServicio origenservicio = tipoServicioOperaciones.ObtenerTipoServiciosID(id);
+            TipoServicioDTO destinodto = new TipoServicioDTO();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<TipoServicio, TipoServicioDTO>());
+            var mapper = config.CreateMapper();
+
+            destinodto = mapper.Map<TipoServicioDTO>(origenservicio);
+
+            destinodto.ID_tipo_servicio = origenservicio.ID_tipo_servicio; // aca pedia la placa ??
+
+            return destinodto;
+        }
+
+        public TipoServicioDTO.ListaTipoServicios ObtenerTodosTipoServicio()
+        {
+            List<TipoServicio> listaTipoServicio = tipoServicioOperaciones.ObtenerTodosTipoServicios();
+            TipoServicioDTO.ListaTipoServicios destinoListaTipoServicios = new TipoServicioDTO.ListaTipoServicios();
+            destinoListaTipoServicios.lista = new List<TipoServicioDTO>();
+            foreach (TipoServicio srv in listaTipoServicio)
+            {
+                destinoListaTipoServicios.lista.Add(new TipoServicioDTO()
+                {
+                    ID_tipo_servicio = srv.ID_tipo_servicio
+                    ,
+                    Descripcion_servicio = srv.descripcion_servicio
+
+                });
+            }
+
+            return destinoListaTipoServicios;
         }
 
     }

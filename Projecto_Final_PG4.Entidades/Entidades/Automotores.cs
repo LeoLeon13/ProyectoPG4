@@ -9,10 +9,6 @@ namespace Projecto_Final_PG4.Entidades
 {
     public class Automotores
     {
-        #region variables
-        //publicas
-
-        //privadas
         [Key]
         public int ID_automotor { get; set; }
 
@@ -30,27 +26,26 @@ namespace Projecto_Final_PG4.Entidades
 
         public int cilindraje { get; set; }
 
-        [MaxLength(1)]
-        public char esTransPublico { get; set; }
+        [MaxLength(2)]
+        public string esTransPublico { get; set; }
 
-        [MaxLength(1)]
-        public char esManual { get; set; }
+        [MaxLength(2)]
+        public string esManual { get; set; }
 
-        [MaxLength(1)]
-        public char esTransEspe { get; set; }
+        [MaxLength(2)]
+        public string esTransEspe { get; set; }
 
-        [MaxLength(1)]
-        public char tiene_contenedor { get; set; }
+        [MaxLength(2)]
+        public string tiene_contenedor { get; set; }
 
-        [MaxLength(1)]
-        public char esMensajero { get; set; }
+        [MaxLength(2)]
+        public string esMensajero { get; set; }
 
-        [MaxLength(1)]
-        public char esClasica { get; set; }
+        [MaxLength(2)]
+        public string esClasica { get; set; }
 
         [MaxLength(50)]
         public string tipo_vehiculo { get; set; }
 
-        #endregion
     }
 }

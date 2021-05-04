@@ -10,8 +10,8 @@ namespace Projecto_Final_PG4.ComunicacionSApp
     public class ServiciosDTO
     {
         //Atributos
-        private int ID_servicio;
-        private int ID_tipo_servicio;
+        private int Id_servicio;
+        private int Id_tipo_servicio;
         private DateTime fecha;
         private string descripcion_servicio;
         private string cedula;
@@ -20,9 +20,9 @@ namespace Projecto_Final_PG4.ComunicacionSApp
 
         //Propiedades
         [DataMember]
-        public int ID_servicio1 { get => ID_servicio; set => ID_servicio = value; }
+        public int ID_servicio { get => Id_servicio; set => Id_servicio = value; }
         [DataMember]
-        public int ID_tipo_servicio1 { get => ID_tipo_servicio; set => ID_tipo_servicio = value; }
+        public int ID_tipo_servicio { get => Id_tipo_servicio; set => Id_tipo_servicio = value; }
         [DataMember]
         public DateTime Fecha { get => fecha; set => fecha = value; }
         [DataMember]

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projecto_Final_PG4.Presentacion.SRComunicacionPersona;
 //using Projecto_Final_PG4.Entidades;
 //using Projecto_Final_PG4.Logica;
 
@@ -26,19 +27,24 @@ namespace Projecto_Final_PG4.Presentacion
 
         }
 
-        private void cargarDatosGrid() 
+        private void cargarDatosGrid()
         {
             //LogicaServicios serv = new LogicaServicios();
+            SRComunicacionPersona.PrimerServicioClient servicio = new SRComunicacionPersona.PrimerServicioClient();
 
-            //dgvServiciosClientes.DataSource = null;
-            //if (Form_Login.tipoUsuario.ToString().Equals("S"))
-            //{
-            //    dgvServiciosClientes.DataSource = serv.BuscarTodos();
-            //}
-            //else
-            //{
-            //    dgvServiciosClientes.DataSource = serv.Buscar(int.Parse(Form_Login.Idcliente.ToString()));
-            //}
+            dgvServiciosClientes.DataSource = null;
+            if (Form_Login.tipoUsuario.ToString().Equals("S"))
+            {
+                dgvServiciosClientes.DataSource = servicio.ObtenerTodosServicio().lista;
+            }
+            else
+            {
+                BindingSource source = new BindingSource();
+                source.DataSource = servicio.ObtenerServicioID(int.Parse(Form_Login.IdServicio.ToString()));
+                dgvServiciosClientes.DataSource = source;
+                dgvServiciosClientes.AutoResizeColumns();
+                //dgvServiciosClientes.DataSource = servicio.ObtenerServicioID(int.Parse(Form_Login.Idcliente.ToString()));//serv.Buscar(int.Parse(Form_Login.Idcliente.ToString()));
+            }
 
             ////List<Servicios> servicioPersona = logicaServicio.BuscarTodos();
 
@@ -52,6 +58,12 @@ namespace Projecto_Final_PG4.Presentacion
 
         private void buscar_Click_1(object sender, EventArgs e)
         {
+            SRComunicacionPersona.PrimerServicioClient servicio = new PrimerServicioClient();
+            BindingSource source = new BindingSource();
+            source.DataSource = servicio.ObtenerServicioID(int.Parse(tbxBuscar.Text));
+            dgvServiciosClientes.DataSource = source;
+            dgvServiciosClientes.AutoResizeColumns();
+
             //try
             //{
 
@@ -74,20 +86,31 @@ namespace Projecto_Final_PG4.Presentacion
 
         private void btn_BuscarTodos_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
 
-            //    List<Servicios> servicioPersona = logicaServicio.BuscarTodos();
+                //List<Servicios> servicioPersona = logicaServicio.BuscarTodos();
+                SRComunicacionPersona.PrimerServicioClient servicio = new SRComunicacionPersona.PrimerServicioClient();
+                var lstServicios = servicio.ObtenerTodosServicio().lista;//servico.ObtenerServicioID(int.Parse(Form_Login.IdServicio.ToString()));
+                dgvServiciosClientes.DataSource = servicio.ObtenerTodosServicio().lista;
 
-            //    dgvServiciosClientes.DataSource = servicioPersona;
-
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine("Form1.btnBuscar_Click=> Error: " + ex.Message);
-            //    MessageBox.Show("Error: " + ex.Message);
-            //}
+                for (int i = 0; i < lstServicios.Length; i++)
+                {
+                    if (lstServicios[i].ID_servicio.Equals(int.Parse(Form_Login.IdServicio.ToString())))
+                    {
+                        BindingSource source = new BindingSource();
+                        source.DataSource = servicio.ObtenerServicioID(int.Parse(Form_Login.IdServicio.ToString()));
+                        dgvServiciosClientes.DataSource = source;
+                        dgvServiciosClientes.AutoResizeColumns();
+                    }
+                }
+                tbxBuscar.Clear();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Form1.btnBuscar_Click=> Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

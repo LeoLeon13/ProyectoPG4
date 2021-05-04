@@ -27,21 +27,17 @@ namespace Projecto_Final_PG4.Presentacion
 
         }
 
-        /*LogicPersonas persona = new LogicaPersonas();
-        LogicaAutoClientes logicaAutoCli = new LogicaAutoClientes();
-        LogicaServicios logicaServicios = new LogicaServicios();*/
-
-        //private MensajeSocket mensajeSocket = new MensajeSocket();
-        //private SocketCliente cliente = new SocketCliente();
         private string usuario;
         private string pass;
         public static char tipoUsuario;
         public static int placa;
         public static string cedula;
+        public static string cedula1;
         public static string userinfo;
         public static string nombreUsr;
         public static string apellidoUsr;
         public static int Idcliente;
+        public static int IdServicio;
         public bool aprovado = false;
 
         public void login()
@@ -51,8 +47,9 @@ namespace Projecto_Final_PG4.Presentacion
             persona.Cedula = int.Parse(txt_User.Text).ToString();//persona.Buscar(int.Parse(txt_User.Text));
             cedula = int.Parse(txt_User.Text).ToString();
             //servicioClient.ObtenerPersonaID(int.Parse(txt_User.Text.ToString()));
-            var listapersonas = servicioClient.ObtenerPersonaID(int.Parse(cedula));//servicioClient.ObtenerTodos().lista;
-            var listaClientes = servicioClient.ObtenerTodosClientes().lista;
+            var todasPersonas = servicioClient.ObtenerTodosPersona().lista;
+            var listapersonas = servicioClient.ObtenerPersonaID(cedula);//servicioClient.ObtenerTodos().lista;
+            var listaAutoClientes = servicioClient.ObtenerTodosAutoClientes().lista;
             var listaServicios = servicioClient.ObtenerTodosServicio().lista;
 
             //List<PersonaDTO> listaPersonas = new List<PersonaDTO>().ToList();//cliente.ClienteObjeto(mensajeSocket).ListaPersonas;
@@ -71,7 +68,7 @@ namespace Projecto_Final_PG4.Presentacion
                 {
                     //this.Close();
                     aprovado = true;
-                    string mensaje = String.Format("Bienvenido {0},{1}", nombreUsr,apellidoUsr);
+                    string mensaje = String.Format("Bienvenido {0},{1}", nombreUsr, apellidoUsr);
                     MessageBox.Show(mensaje, "Sistema de mantenimiento de autos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -89,15 +86,23 @@ namespace Projecto_Final_PG4.Presentacion
                     pass = listapersonas.Pass;//listapersonas[0].Pass.ToString();
                     tipoUsuario = char.Parse(listapersonas.EsEmpleado);//char.Parse(listapersonas[0].EsEmpleado.ToString());
 
-                    for (int i = 0; i < listaClientes.Length; i++)
+                    for (int t = 0; t < listaServicios.Length; t++)
                     {
-                        cedula = listaClientes[i].Cedula.ToString();//int.Parse(listaClientes[i].Cedula.ToString());
+                        cedula1 = listaServicios[t].Cedula.ToString();
+                        if (usuario.Equals(cedula1))
+                        {
+                            IdServicio = int.Parse(listaServicios[t].ID_servicio.ToString());
+                        }
+                    }
 
+                    for (int i = 0; i < listaAutoClientes.Length; i++)
+                    {
+                        cedula = listaAutoClientes[i].Cedula.ToString();//int.Parse(listaClientes[i].Cedula.ToString());
 
                         if (usuario.Equals(cedula.ToString()))
                         {
-                            placa = int.Parse(listaClientes[i].Placa.ToString());
-                            Idcliente = int.Parse(cedula);
+                            placa = int.Parse(listaAutoClientes[i].Placa.ToString());
+                            Idcliente = int.Parse(listaAutoClientes[i].ID_Auto_Cliente.ToString());
                         }
                     }
                 }
@@ -109,7 +114,7 @@ namespace Projecto_Final_PG4.Presentacion
                 if (txt_Password.Text.Equals(pass) && txt_User.Text.Equals(usuario))
                 {
                     aprovado = true;
-                    string mensaje = String.Format("Bienvenido {0},{1}", nombreUsr,apellidoUsr);
+                    string mensaje = String.Format("Bienvenido {0},{1}", nombreUsr, apellidoUsr);
                     MessageBox.Show(mensaje, "Sistema de mantenimiento de autos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else

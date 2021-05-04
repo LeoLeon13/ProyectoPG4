@@ -291,7 +291,7 @@ namespace Projecto_Final_PG4.Presentacion.SRComunicacionPersona {
         private string CedulaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ID_Auto_Cliente1Field;
+        private int ID_Auto_ClienteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlacaField;
@@ -320,14 +320,14 @@ namespace Projecto_Final_PG4.Presentacion.SRComunicacionPersona {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID_Auto_Cliente1 {
+        public int ID_Auto_Cliente {
             get {
-                return this.ID_Auto_Cliente1Field;
+                return this.ID_Auto_ClienteField;
             }
             set {
-                if ((this.ID_Auto_Cliente1Field.Equals(value) != true)) {
-                    this.ID_Auto_Cliente1Field = value;
-                    this.RaisePropertyChanged("ID_Auto_Cliente1");
+                if ((this.ID_Auto_ClienteField.Equals(value) != true)) {
+                    this.ID_Auto_ClienteField = value;
+                    this.RaisePropertyChanged("ID_Auto_Cliente");
                 }
             }
         }
@@ -418,10 +418,10 @@ namespace Projecto_Final_PG4.Presentacion.SRComunicacionPersona {
         private System.DateTime FechaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ID_servicio1Field;
+        private int ID_servicioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ID_tipo_servicio1Field;
+        private int ID_tipo_servicioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlacaField;
@@ -479,27 +479,27 @@ namespace Projecto_Final_PG4.Presentacion.SRComunicacionPersona {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID_servicio1 {
+        public int ID_servicio {
             get {
-                return this.ID_servicio1Field;
+                return this.ID_servicioField;
             }
             set {
-                if ((this.ID_servicio1Field.Equals(value) != true)) {
-                    this.ID_servicio1Field = value;
-                    this.RaisePropertyChanged("ID_servicio1");
+                if ((this.ID_servicioField.Equals(value) != true)) {
+                    this.ID_servicioField = value;
+                    this.RaisePropertyChanged("ID_servicio");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID_tipo_servicio1 {
+        public int ID_tipo_servicio {
             get {
-                return this.ID_tipo_servicio1Field;
+                return this.ID_tipo_servicioField;
             }
             set {
-                if ((this.ID_tipo_servicio1Field.Equals(value) != true)) {
-                    this.ID_tipo_servicio1Field = value;
-                    this.RaisePropertyChanged("ID_tipo_servicio1");
+                if ((this.ID_tipo_servicioField.Equals(value) != true)) {
+                    this.ID_tipo_servicioField = value;
+                    this.RaisePropertyChanged("ID_tipo_servicio");
                 }
             }
         }
@@ -584,6 +584,529 @@ namespace Projecto_Final_PG4.Presentacion.SRComunicacionPersona {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiciosClienteDTO", Namespace="http://schemas.datacontract.org/2004/07/Projecto_Final_PG4.ComunicacionSApp")]
+    [System.SerializableAttribute()]
+    public partial class ServiciosClienteDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CedulaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_Servicio_ClienteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlacaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Servicio_SeleccionadoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Cedula {
+            get {
+                return this.CedulaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CedulaField, value) != true)) {
+                    this.CedulaField = value;
+                    this.RaisePropertyChanged("Cedula");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_Servicio_Cliente {
+            get {
+                return this.ID_Servicio_ClienteField;
+            }
+            set {
+                if ((this.ID_Servicio_ClienteField.Equals(value) != true)) {
+                    this.ID_Servicio_ClienteField = value;
+                    this.RaisePropertyChanged("ID_Servicio_Cliente");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Placa {
+            get {
+                return this.PlacaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlacaField, value) != true)) {
+                    this.PlacaField = value;
+                    this.RaisePropertyChanged("Placa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Servicio_Seleccionado {
+            get {
+                return this.Servicio_SeleccionadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Servicio_SeleccionadoField, value) != true)) {
+                    this.Servicio_SeleccionadoField = value;
+                    this.RaisePropertyChanged("Servicio_Seleccionado");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+        
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="ServiciosClienteDTO.ListaServiciosCliente", Namespace="http://schemas.datacontract.org/2004/07/Projecto_Final_PG4.ComunicacionSApp")]
+        [System.SerializableAttribute()]
+        public partial class ListaServiciosCliente : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+            
+            [System.NonSerializedAttribute()]
+            private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+            
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO[] listaField;
+            
+            public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+                get {
+                    return this.extensionDataField;
+                }
+                set {
+                    this.extensionDataField = value;
+                }
+            }
+            
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO[] lista {
+                get {
+                    return this.listaField;
+                }
+                set {
+                    if ((object.ReferenceEquals(this.listaField, value) != true)) {
+                        this.listaField = value;
+                        this.RaisePropertyChanged("lista");
+                    }
+                }
+            }
+            
+            public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+            
+            protected void RaisePropertyChanged(string propertyName) {
+                System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+                if ((propertyChanged != null)) {
+                    propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AutomotoresDTO", Namespace="http://schemas.datacontract.org/2004/07/Projecto_Final_PG4.ComunicacionSApp")]
+    [System.SerializableAttribute()]
+    public partial class AutomotoresDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CilindrajeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EsClasicaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EsManualField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EsMensajeroField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EsTransEspeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EsTransPublicoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_automotorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MarcaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModeloField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlacaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Tiene_contenedorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Tipo_combustibleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Tipo_vehiculoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Cilindraje {
+            get {
+                return this.CilindrajeField;
+            }
+            set {
+                if ((this.CilindrajeField.Equals(value) != true)) {
+                    this.CilindrajeField = value;
+                    this.RaisePropertyChanged("Cilindraje");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EsClasica {
+            get {
+                return this.EsClasicaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EsClasicaField, value) != true)) {
+                    this.EsClasicaField = value;
+                    this.RaisePropertyChanged("EsClasica");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EsManual {
+            get {
+                return this.EsManualField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EsManualField, value) != true)) {
+                    this.EsManualField = value;
+                    this.RaisePropertyChanged("EsManual");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EsMensajero {
+            get {
+                return this.EsMensajeroField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EsMensajeroField, value) != true)) {
+                    this.EsMensajeroField = value;
+                    this.RaisePropertyChanged("EsMensajero");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EsTransEspe {
+            get {
+                return this.EsTransEspeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EsTransEspeField, value) != true)) {
+                    this.EsTransEspeField = value;
+                    this.RaisePropertyChanged("EsTransEspe");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EsTransPublico {
+            get {
+                return this.EsTransPublicoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EsTransPublicoField, value) != true)) {
+                    this.EsTransPublicoField = value;
+                    this.RaisePropertyChanged("EsTransPublico");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_automotor {
+            get {
+                return this.ID_automotorField;
+            }
+            set {
+                if ((this.ID_automotorField.Equals(value) != true)) {
+                    this.ID_automotorField = value;
+                    this.RaisePropertyChanged("ID_automotor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Marca {
+            get {
+                return this.MarcaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MarcaField, value) != true)) {
+                    this.MarcaField = value;
+                    this.RaisePropertyChanged("Marca");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Modelo {
+            get {
+                return this.ModeloField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeloField, value) != true)) {
+                    this.ModeloField = value;
+                    this.RaisePropertyChanged("Modelo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Placa {
+            get {
+                return this.PlacaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlacaField, value) != true)) {
+                    this.PlacaField = value;
+                    this.RaisePropertyChanged("Placa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Tiene_contenedor {
+            get {
+                return this.Tiene_contenedorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Tiene_contenedorField, value) != true)) {
+                    this.Tiene_contenedorField = value;
+                    this.RaisePropertyChanged("Tiene_contenedor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Tipo_combustible {
+            get {
+                return this.Tipo_combustibleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Tipo_combustibleField, value) != true)) {
+                    this.Tipo_combustibleField = value;
+                    this.RaisePropertyChanged("Tipo_combustible");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Tipo_vehiculo {
+            get {
+                return this.Tipo_vehiculoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Tipo_vehiculoField, value) != true)) {
+                    this.Tipo_vehiculoField = value;
+                    this.RaisePropertyChanged("Tipo_vehiculo");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+        
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="AutomotoresDTO.ListaAutomotores", Namespace="http://schemas.datacontract.org/2004/07/Projecto_Final_PG4.ComunicacionSApp")]
+        [System.SerializableAttribute()]
+        public partial class ListaAutomotores : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+            
+            [System.NonSerializedAttribute()]
+            private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+            
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO[] listaField;
+            
+            public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+                get {
+                    return this.extensionDataField;
+                }
+                set {
+                    this.extensionDataField = value;
+                }
+            }
+            
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO[] lista {
+                get {
+                    return this.listaField;
+                }
+                set {
+                    if ((object.ReferenceEquals(this.listaField, value) != true)) {
+                        this.listaField = value;
+                        this.RaisePropertyChanged("lista");
+                    }
+                }
+            }
+            
+            public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+            
+            protected void RaisePropertyChanged(string propertyName) {
+                System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+                if ((propertyChanged != null)) {
+                    propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TipoServicioDTO", Namespace="http://schemas.datacontract.org/2004/07/Projecto_Final_PG4.ComunicacionSApp")]
+    [System.SerializableAttribute()]
+    public partial class TipoServicioDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Descripcion_servicioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ID_tipo_servicioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion_servicio {
+            get {
+                return this.Descripcion_servicioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Descripcion_servicioField, value) != true)) {
+                    this.Descripcion_servicioField = value;
+                    this.RaisePropertyChanged("Descripcion_servicio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID_tipo_servicio {
+            get {
+                return this.ID_tipo_servicioField;
+            }
+            set {
+                if ((this.ID_tipo_servicioField.Equals(value) != true)) {
+                    this.ID_tipo_servicioField = value;
+                    this.RaisePropertyChanged("ID_tipo_servicio");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+        
+        [System.Diagnostics.DebuggerStepThroughAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="TipoServicioDTO.ListaTipoServicios", Namespace="http://schemas.datacontract.org/2004/07/Projecto_Final_PG4.ComunicacionSApp")]
+        [System.SerializableAttribute()]
+        public partial class ListaTipoServicios : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+            
+            [System.NonSerializedAttribute()]
+            private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+            
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO[] listaField;
+            
+            public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+                get {
+                    return this.extensionDataField;
+                }
+                set {
+                    this.extensionDataField = value;
+                }
+            }
+            
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO[] lista {
+                get {
+                    return this.listaField;
+                }
+                set {
+                    if ((object.ReferenceEquals(this.listaField, value) != true)) {
+                        this.listaField = value;
+                        this.RaisePropertyChanged("lista");
+                    }
+                }
+            }
+            
+            public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+            
+            protected void RaisePropertyChanged(string propertyName) {
+                System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+                if ((propertyChanged != null)) {
+                    propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+                }
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SRComunicacionPersona.IPrimerServicio")]
     public interface IPrimerServicio {
@@ -601,22 +1124,22 @@ namespace Projecto_Final_PG4.Presentacion.SRComunicacionPersona {
         System.Threading.Tasks.Task ModificarPersonaAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO persona);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/EliminarPersona", ReplyAction="http://tempuri.org/IPrimerServicio/EliminarPersonaResponse")]
-        void EliminarPersona(int id);
+        void EliminarPersona(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/EliminarPersona", ReplyAction="http://tempuri.org/IPrimerServicio/EliminarPersonaResponse")]
-        System.Threading.Tasks.Task EliminarPersonaAsync(int id);
+        System.Threading.Tasks.Task EliminarPersonaAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerPersonaID", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerPersonaIDResponse")]
-        Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO ObtenerPersonaID(int id);
+        Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO ObtenerPersonaID(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerPersonaID", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerPersonaIDResponse")]
-        System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO> ObtenerPersonaIDAsync(int id);
+        System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO> ObtenerPersonaIDAsync(string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodos", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosResponse")]
-        Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO.ListaPersonas ObtenerTodos();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosPersona", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosPersonaResponse")]
+        Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO.ListaPersonas ObtenerTodosPersona();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodos", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosResponse")]
-        System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO.ListaPersonas> ObtenerTodosAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosPersona", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosPersonaResponse")]
+        System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO.ListaPersonas> ObtenerTodosPersonaAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/InsertarAutoCliente", ReplyAction="http://tempuri.org/IPrimerServicio/InsertarAutoClienteResponse")]
         void InsertarAutoCliente(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutoClienteDTO cliente);
@@ -642,11 +1165,11 @@ namespace Projecto_Final_PG4.Presentacion.SRComunicacionPersona {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerAutoClienteID", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerAutoClienteIDResponse")]
         System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutoClienteDTO> ObtenerAutoClienteIDAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosClientes", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosClientesResponse")]
-        Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutoClienteDTO.ListaAutoCliente ObtenerTodosClientes();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosAutoClientes", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosAutoClientesResponse")]
+        Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutoClienteDTO.ListaAutoCliente ObtenerTodosAutoClientes();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosClientes", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosClientesResponse")]
-        System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutoClienteDTO.ListaAutoCliente> ObtenerTodosClientesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosAutoClientes", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosAutoClientesResponse")]
+        System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutoClienteDTO.ListaAutoCliente> ObtenerTodosAutoClientesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/InsertarServicio", ReplyAction="http://tempuri.org/IPrimerServicio/InsertarServicioResponse")]
         void InsertarServicio(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosDTO servicio);
@@ -677,6 +1200,96 @@ namespace Projecto_Final_PG4.Presentacion.SRComunicacionPersona {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosServicio", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosServicioResponse")]
         System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosDTO.ListaServicios> ObtenerTodosServicioAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/InsertarServicioCliente", ReplyAction="http://tempuri.org/IPrimerServicio/InsertarServicioClienteResponse")]
+        void InsertarServicioCliente(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO servicio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/InsertarServicioCliente", ReplyAction="http://tempuri.org/IPrimerServicio/InsertarServicioClienteResponse")]
+        System.Threading.Tasks.Task InsertarServicioClienteAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO servicio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ModificarServicioCliente", ReplyAction="http://tempuri.org/IPrimerServicio/ModificarServicioClienteResponse")]
+        void ModificarServicioCliente(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO servicio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ModificarServicioCliente", ReplyAction="http://tempuri.org/IPrimerServicio/ModificarServicioClienteResponse")]
+        System.Threading.Tasks.Task ModificarServicioClienteAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO servicio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/EliminarServicioCliente", ReplyAction="http://tempuri.org/IPrimerServicio/EliminarServicioClienteResponse")]
+        void EliminarServicioCliente(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/EliminarServicioCliente", ReplyAction="http://tempuri.org/IPrimerServicio/EliminarServicioClienteResponse")]
+        System.Threading.Tasks.Task EliminarServicioClienteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerServicioClienteID", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerServicioClienteIDResponse")]
+        Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO ObtenerServicioClienteID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerServicioClienteID", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerServicioClienteIDResponse")]
+        System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO> ObtenerServicioClienteIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosServicioCliente", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosServicioClienteResponse")]
+        Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO.ListaServiciosCliente ObtenerTodosServicioCliente();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosServicioCliente", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosServicioClienteResponse")]
+        System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO.ListaServiciosCliente> ObtenerTodosServicioClienteAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/InsertarAutomotor", ReplyAction="http://tempuri.org/IPrimerServicio/InsertarAutomotorResponse")]
+        void InsertarAutomotor(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO automotor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/InsertarAutomotor", ReplyAction="http://tempuri.org/IPrimerServicio/InsertarAutomotorResponse")]
+        System.Threading.Tasks.Task InsertarAutomotorAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO automotor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ModificarAutomotor", ReplyAction="http://tempuri.org/IPrimerServicio/ModificarAutomotorResponse")]
+        void ModificarAutomotor(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO automotor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ModificarAutomotor", ReplyAction="http://tempuri.org/IPrimerServicio/ModificarAutomotorResponse")]
+        System.Threading.Tasks.Task ModificarAutomotorAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO automotor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/EliminarAutomotor", ReplyAction="http://tempuri.org/IPrimerServicio/EliminarAutomotorResponse")]
+        void EliminarAutomotor(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/EliminarAutomotor", ReplyAction="http://tempuri.org/IPrimerServicio/EliminarAutomotorResponse")]
+        System.Threading.Tasks.Task EliminarAutomotorAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerAutomotorID", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerAutomotorIDResponse")]
+        Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO ObtenerAutomotorID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerAutomotorID", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerAutomotorIDResponse")]
+        System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO> ObtenerAutomotorIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosAutomotores", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosAutomotoresResponse")]
+        Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO.ListaAutomotores ObtenerTodosAutomotores();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosAutomotores", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosAutomotoresResponse")]
+        System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO.ListaAutomotores> ObtenerTodosAutomotoresAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/InsertarTipoServicio", ReplyAction="http://tempuri.org/IPrimerServicio/InsertarTipoServicioResponse")]
+        void InsertarTipoServicio(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO tipoSrv);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/InsertarTipoServicio", ReplyAction="http://tempuri.org/IPrimerServicio/InsertarTipoServicioResponse")]
+        System.Threading.Tasks.Task InsertarTipoServicioAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO tipoSrv);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ModificarTipoServicio", ReplyAction="http://tempuri.org/IPrimerServicio/ModificarTipoServicioResponse")]
+        void ModificarTipoServicio(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO tipoSrv);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ModificarTipoServicio", ReplyAction="http://tempuri.org/IPrimerServicio/ModificarTipoServicioResponse")]
+        System.Threading.Tasks.Task ModificarTipoServicioAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO tipoSrv);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/EliminarTipoServicio", ReplyAction="http://tempuri.org/IPrimerServicio/EliminarTipoServicioResponse")]
+        void EliminarTipoServicio(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/EliminarTipoServicio", ReplyAction="http://tempuri.org/IPrimerServicio/EliminarTipoServicioResponse")]
+        System.Threading.Tasks.Task EliminarTipoServicioAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTipoServicioID", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTipoServicioIDResponse")]
+        Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO ObtenerTipoServicioID(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTipoServicioID", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTipoServicioIDResponse")]
+        System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO> ObtenerTipoServicioIDAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosTipoServicio", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosTipoServicioResponse")]
+        Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO.ListaTipoServicios ObtenerTodosTipoServicio();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPrimerServicio/ObtenerTodosTipoServicio", ReplyAction="http://tempuri.org/IPrimerServicio/ObtenerTodosTipoServicioResponse")]
+        System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO.ListaTipoServicios> ObtenerTodosTipoServicioAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -722,28 +1335,28 @@ namespace Projecto_Final_PG4.Presentacion.SRComunicacionPersona {
             return base.Channel.ModificarPersonaAsync(persona);
         }
         
-        public void EliminarPersona(int id) {
+        public void EliminarPersona(string id) {
             base.Channel.EliminarPersona(id);
         }
         
-        public System.Threading.Tasks.Task EliminarPersonaAsync(int id) {
+        public System.Threading.Tasks.Task EliminarPersonaAsync(string id) {
             return base.Channel.EliminarPersonaAsync(id);
         }
         
-        public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO ObtenerPersonaID(int id) {
+        public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO ObtenerPersonaID(string id) {
             return base.Channel.ObtenerPersonaID(id);
         }
         
-        public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO> ObtenerPersonaIDAsync(int id) {
+        public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO> ObtenerPersonaIDAsync(string id) {
             return base.Channel.ObtenerPersonaIDAsync(id);
         }
         
-        public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO.ListaPersonas ObtenerTodos() {
-            return base.Channel.ObtenerTodos();
+        public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO.ListaPersonas ObtenerTodosPersona() {
+            return base.Channel.ObtenerTodosPersona();
         }
         
-        public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO.ListaPersonas> ObtenerTodosAsync() {
-            return base.Channel.ObtenerTodosAsync();
+        public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO.ListaPersonas> ObtenerTodosPersonaAsync() {
+            return base.Channel.ObtenerTodosPersonaAsync();
         }
         
         public void InsertarAutoCliente(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutoClienteDTO cliente) {
@@ -778,12 +1391,12 @@ namespace Projecto_Final_PG4.Presentacion.SRComunicacionPersona {
             return base.Channel.ObtenerAutoClienteIDAsync(id);
         }
         
-        public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutoClienteDTO.ListaAutoCliente ObtenerTodosClientes() {
-            return base.Channel.ObtenerTodosClientes();
+        public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutoClienteDTO.ListaAutoCliente ObtenerTodosAutoClientes() {
+            return base.Channel.ObtenerTodosAutoClientes();
         }
         
-        public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutoClienteDTO.ListaAutoCliente> ObtenerTodosClientesAsync() {
-            return base.Channel.ObtenerTodosClientesAsync();
+        public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutoClienteDTO.ListaAutoCliente> ObtenerTodosAutoClientesAsync() {
+            return base.Channel.ObtenerTodosAutoClientesAsync();
         }
         
         public void InsertarServicio(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosDTO servicio) {
@@ -824,6 +1437,126 @@ namespace Projecto_Final_PG4.Presentacion.SRComunicacionPersona {
         
         public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosDTO.ListaServicios> ObtenerTodosServicioAsync() {
             return base.Channel.ObtenerTodosServicioAsync();
+        }
+        
+        public void InsertarServicioCliente(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO servicio) {
+            base.Channel.InsertarServicioCliente(servicio);
+        }
+        
+        public System.Threading.Tasks.Task InsertarServicioClienteAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO servicio) {
+            return base.Channel.InsertarServicioClienteAsync(servicio);
+        }
+        
+        public void ModificarServicioCliente(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO servicio) {
+            base.Channel.ModificarServicioCliente(servicio);
+        }
+        
+        public System.Threading.Tasks.Task ModificarServicioClienteAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO servicio) {
+            return base.Channel.ModificarServicioClienteAsync(servicio);
+        }
+        
+        public void EliminarServicioCliente(int id) {
+            base.Channel.EliminarServicioCliente(id);
+        }
+        
+        public System.Threading.Tasks.Task EliminarServicioClienteAsync(int id) {
+            return base.Channel.EliminarServicioClienteAsync(id);
+        }
+        
+        public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO ObtenerServicioClienteID(int id) {
+            return base.Channel.ObtenerServicioClienteID(id);
+        }
+        
+        public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO> ObtenerServicioClienteIDAsync(int id) {
+            return base.Channel.ObtenerServicioClienteIDAsync(id);
+        }
+        
+        public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO.ListaServiciosCliente ObtenerTodosServicioCliente() {
+            return base.Channel.ObtenerTodosServicioCliente();
+        }
+        
+        public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO.ListaServiciosCliente> ObtenerTodosServicioClienteAsync() {
+            return base.Channel.ObtenerTodosServicioClienteAsync();
+        }
+        
+        public void InsertarAutomotor(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO automotor) {
+            base.Channel.InsertarAutomotor(automotor);
+        }
+        
+        public System.Threading.Tasks.Task InsertarAutomotorAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO automotor) {
+            return base.Channel.InsertarAutomotorAsync(automotor);
+        }
+        
+        public void ModificarAutomotor(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO automotor) {
+            base.Channel.ModificarAutomotor(automotor);
+        }
+        
+        public System.Threading.Tasks.Task ModificarAutomotorAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO automotor) {
+            return base.Channel.ModificarAutomotorAsync(automotor);
+        }
+        
+        public void EliminarAutomotor(int id) {
+            base.Channel.EliminarAutomotor(id);
+        }
+        
+        public System.Threading.Tasks.Task EliminarAutomotorAsync(int id) {
+            return base.Channel.EliminarAutomotorAsync(id);
+        }
+        
+        public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO ObtenerAutomotorID(int id) {
+            return base.Channel.ObtenerAutomotorID(id);
+        }
+        
+        public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO> ObtenerAutomotorIDAsync(int id) {
+            return base.Channel.ObtenerAutomotorIDAsync(id);
+        }
+        
+        public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO.ListaAutomotores ObtenerTodosAutomotores() {
+            return base.Channel.ObtenerTodosAutomotores();
+        }
+        
+        public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO.ListaAutomotores> ObtenerTodosAutomotoresAsync() {
+            return base.Channel.ObtenerTodosAutomotoresAsync();
+        }
+        
+        public void InsertarTipoServicio(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO tipoSrv) {
+            base.Channel.InsertarTipoServicio(tipoSrv);
+        }
+        
+        public System.Threading.Tasks.Task InsertarTipoServicioAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO tipoSrv) {
+            return base.Channel.InsertarTipoServicioAsync(tipoSrv);
+        }
+        
+        public void ModificarTipoServicio(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO tipoSrv) {
+            base.Channel.ModificarTipoServicio(tipoSrv);
+        }
+        
+        public System.Threading.Tasks.Task ModificarTipoServicioAsync(Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO tipoSrv) {
+            return base.Channel.ModificarTipoServicioAsync(tipoSrv);
+        }
+        
+        public void EliminarTipoServicio(int id) {
+            base.Channel.EliminarTipoServicio(id);
+        }
+        
+        public System.Threading.Tasks.Task EliminarTipoServicioAsync(int id) {
+            return base.Channel.EliminarTipoServicioAsync(id);
+        }
+        
+        public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO ObtenerTipoServicioID(int id) {
+            return base.Channel.ObtenerTipoServicioID(id);
+        }
+        
+        public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO> ObtenerTipoServicioIDAsync(int id) {
+            return base.Channel.ObtenerTipoServicioIDAsync(id);
+        }
+        
+        public Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO.ListaTipoServicios ObtenerTodosTipoServicio() {
+            return base.Channel.ObtenerTodosTipoServicio();
+        }
+        
+        public System.Threading.Tasks.Task<Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO.ListaTipoServicios> ObtenerTodosTipoServicioAsync() {
+            return base.Channel.ObtenerTodosTipoServicioAsync();
         }
     }
 }

@@ -174,10 +174,19 @@
     <None Include="Connected Services\SRComunicacionPersona\Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutoClienteDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SRComunicacionPersona\Projecto_Final_PG4.Presentacion.SRComunicacionPersona.AutomotoresDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SRComunicacionPersona\Projecto_Final_PG4.Presentacion.SRComunicacionPersona.PersonaDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SRComunicacionPersona\Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosClienteDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SRComunicacionPersona\Projecto_Final_PG4.Presentacion.SRComunicacionPersona.ServiciosDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SRComunicacionPersona\Projecto_Final_PG4.Presentacion.SRComunicacionPersona.TipoServicioDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="packages.config" />
